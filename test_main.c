@@ -21,7 +21,6 @@ int		main(int ac, char **av)
 
 #ifndef TF
 	printf("no function selection was made");
-	return (0);
 #elif TF == ATOI
 	if (ac == 2)
 	{
@@ -33,7 +32,62 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("ft_atoi requires exactly one string as argument");
-	return (0);
+#elif TF == STRITER
+	if (ac == 2)
+	{
+		void	here_f(char *c)
+		{
+			*c = 'h';
+		}
+		ft_striter(av[1], here_f);
+		printf("\nresult of ft_striter is :\n%s", av[1]);
+	}
+	else
+		printf("test of ft_striter requires exactly one argument");
+#elif TF == STRITERI
+	if (ac == 2)
+	{
+		void	here_f(unsigned int i, char *c)
+		{
+			i % 2 ? *c = 'h' : (1);
+		}
+		ft_striteri(av[1], here_f);
+		printf("\nresult of ft_striter is :\n%s", av[1]);
+	}
+	else
+		printf("test of ft_striteri requires exactly one argument");
+#elif TF == STRMAP
+	if (ac == 2)
+	{
+		char	*s;
+		char	here_f(char c)
+		{
+			return (c + 1);
+		}
+
+		s = ft_strmap(av[1], here_f);
+		printf("\nresult of ft_strmap is :\n%s", s);
+	}
+	else
+		printf("test of ft_strmap requires exactly one argument");
+#elif TF == MEMALLOC
+	if (ac == 2)
+	{
+		void	*new_buff;
+		int		size;
+
+		size = atoi(av[1]);
+		new_buff = ft_memalloc(size);
+		if (!new_buff)
+			return (1);
+		while (size--)
+			if (((char*)new_buff)[size])
+				printf("\nmemalloc failed, found a byte at : %c",\
+					 ((char*)new_buff)[size]);
+		free(new_buff);
+	}
+	else
+		printf("memalloc test requires one numeric argument");
 #elif TF == MEMCPY
 	if (ac == 2)
 	{
@@ -54,9 +108,17 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("ft_memcpy test requires exactly one argument");
-	return (0);
+#elif TF == STRRCHR
+	if (ac == 3)
+	{
+		printf("\nargument 1 is: %s\nargument 2 is: %c", av[1], av[2][0]);
+		if (ft_strrchr(av[1], (int)av[2][0]) == strrchr(av[1], (int)av[2][0]))
+			printf("\nft_strrchr and strrchr returned same value");
+	}
+	else
+		printf("ft_strrchr test requires exactly 2 arguments");
 #else
 	printf("no function selection was made");
-	return (0);
 #endif
+	return (0);
 }

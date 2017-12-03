@@ -18,13 +18,7 @@
 # include <stdio.h>
 # include <string.h>
 
-# include "libft.h"
-
 # define ATOI 1
 # define MEMCPY 13
-# define STRRCHR 19
-# define STRITER 191
-# define STRITERI 192
-# define STRMAP 193
 
 #endif
