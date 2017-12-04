@@ -26,5 +26,9 @@
 # define STRITER 191
 # define STRITERI 192
 # define STRMAP 193
+# define STREQU 194
+# define STRNEQU 195
+# define STRSUB 196
+# define STRJOIN 197
 
 #endif

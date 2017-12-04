@@ -32,6 +32,23 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("ft_atoi requires exactly one string as argument");
+#elif TF == STRNEQU
+	if (ac == 4)
+	{
+		printf("\nreturn value of ft_strnequ(a1, a2) is : %d",\
+			ft_strnequ(av[1], av[2], atoi(av[3])));
+	}
+	else
+		printf("ft_strnequ test requires exactly three arguments:\
+			string1, string2 and number of bytes to compare");
+#elif TF == STREQU
+	if (ac == 3)
+	{
+		printf("\nreturn value of ft_strequ(a1, a2) is : %d",\
+			ft_strequ(av[1], av[2]));
+	}
+	else
+		printf("ft_strequ test requires exactly two strings as arguments");
 #elif TF == STRITER
 	if (ac == 2)
 	{
@@ -56,6 +73,14 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("test of ft_striteri requires exactly one argument");
+#elif TF == STRJOIN
+	if(ac == 3)
+	{
+		char	*s;
+
+		s = ft_strjoin(av[1], av[2]);
+		printf("\nresult of ft_strjoin(av[1], av[2]) is : %s", s);
+	}
 #elif TF == STRMAP
 	if (ac == 2)
 	{
@@ -70,6 +95,14 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("test of ft_strmap requires exactly one argument");
+#elif TF == STRSUB
+	if (ac == 4)
+	{
+		char	*s;
+
+		s = ft_strsub(av[1], atoi(av[2]), atoi(av[3]));
+		printf("\nreturned string is: %s", s);
+	}
 #elif TF == MEMALLOC
 	if (ac == 2)
 	{
