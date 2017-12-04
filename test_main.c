@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 09:43:54 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/01 10:27:41 by nmauvari         ###   ########.fr       */
+/*   Updated: 2017/12/04 08:21:44 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,18 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("ft_strrchr test requires exactly 2 arguments");
+	return (0);
+#elif TF == STRSPLIT
+	if (ac == 3)
+	{
+		char	**splits;
+
+		splits = ft_strsplit(av[1], av[2][0]);
+		while (splits)
+		{
+			printf("\n%s",*splits++);
+		}
+	}
 #else
 	printf("no function selection was made");
 #endif
