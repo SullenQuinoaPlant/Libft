@@ -21,7 +21,9 @@
 # include "libft.h"
 
 # define ATOI 1
+# define ITOA 9
 # define MEMCPY 13
+# define PUTNBR 16
 # define STRRCHR 19
 # define STRITER 191
 # define STRITERI 192
@@ -30,5 +32,6 @@
 # define STRNEQU 195
 # define STRSUB 196
 # define STRJOIN 197
+# define STRSPLIT 198
 
 #endif

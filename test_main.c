@@ -32,6 +32,48 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("ft_atoi requires exactly one string as argument");
+#elif TF == ITOA
+	if (ac == 2)
+	{
+		int	i;
+		char	*a;
+
+		i = atoi(av[1]);
+		a = ft_itoa(i);
+		printf("\nprintf gives: %d, ft_itoa gives: %s", i, a);
+		free(a);
+	}
+	else
+		printf("test of ft_itoa requires exactly one arument");
+#elif TF == MEMCPY
+	if (ac == 2)
+	{
+		char    *dest;
+        size_t  length;
+
+        length = strlen(av[1]);
+        if (!(dest = malloc(length + 1)))
+		{
+			printf("malloc call failed, in MEMCPY test\n");
+			return (0);
+		}
+		if ((length = strcmp(ft_memcpy(dest, av[1], length), av[1])))
+		{
+			printf("ft_memcpy failed. return val of strcmp is: %d", length);
+		}
+		free(dest);
+	}
+	else
+		printf("ft_memcpy test requires exactly one argument");
+#elif TF == PUTNBR
+	if (ac == 2)
+	{
+		int	t;
+
+		t = atoi(av[1]);
+		printf("printf gives : %d\t and putnbr gives: ", t);
+		ft_putnbr(t);
+	}
 #elif TF == STRNEQU
 	if (ac == 4)
 	{
@@ -121,26 +163,6 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("memalloc test requires one numeric argument");
-#elif TF == MEMCPY
-	if (ac == 2)
-	{
-		char    *dest;
-        size_t  length;
-
-        length = strlen(av[1]);
-        if (!(dest = malloc(length + 1)))
-		{
-			printf("malloc call failed, in MEMCPY test\n");
-			return (0);
-		}
-		if ((length = strcmp(ft_memcpy(dest, av[1], length), av[1])))
-		{
-			printf("ft_memcpy failed. return val of strcmp is: %d", length);
-		}
-		free(dest);
-	}
-	else
-		printf("ft_memcpy test requires exactly one argument");
 #elif TF == STRRCHR
 	if (ac == 3)
 	{
@@ -157,11 +179,13 @@ int		main(int ac, char **av)
 		char	**splits;
 
 		splits = ft_strsplit(av[1], av[2][0]);
-		while (splits)
+		while (*splits)
 		{
 			printf("\n%s",*splits++);
 		}
 	}
+	else
+		printf("\nft_strsplit test requires exactly two arguments.");
 #else
 	printf("no function selection was made");
 #endif
