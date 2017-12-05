@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-void	ft_putnbr(int n)
+void	ft_putnbr_fd(int n, int fd)
 {
 	int		revn;
 	int		high;
@@ -9,7 +9,7 @@ void	ft_putnbr(int n)
 	revn = 0;
 	high = 0;
 	if (n < 0)
-		write(1, "-", 1);
+		write(fd, "-", 1);
 	while (n / 10)
 	{
 		high++;
@@ -17,11 +17,11 @@ void	ft_putnbr(int n)
 		n /= 10;
 	}
 	d = '0' + (n > 0 ? n % 10 : -n % 10);
-	write(1, &d, 1);
+	write(fd, &d, 1);
 	while (high--)
 	{
 		d = '0' + revn % 10 * (n > 0 ? 1 : -1);
 		revn /= 10;
-		write(1, &d, 1);
+		write(fd, &d, 1);
 	}
 }
