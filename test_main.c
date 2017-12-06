@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 09:43:54 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/04 08:21:44 by nmauvari         ###   ########.fr       */
+/*   Updated: 2017/12/06 09:46:48 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,17 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("test of ft_itoa requires exactly one arument");
+#elif TF == MEMCCPY
+	if (ac == 2)
+	{
+		size_t	l;
+		char	*buff;
+
+		l = strlen(av[1]);
+		if ((buff = malloc(l + 1))
+			buff[l] = '\0';
+		free(buff);
+	}
 #elif TF == MEMCPY
 	if (ac == 2)
 	{

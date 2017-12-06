@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 06:46:15 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/06 06:48:12 by nmauvari         ###   ########.fr       */
+/*   Updated: 2017/12/06 09:33:43 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	if (!s)
-		return (s);
 	while (n--)
 		((char*)s)[n] = (char)c;
 	return (s);
