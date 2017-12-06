@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_test_2cs.c                                      :+:      :+:    :+:   */
+/*   h.h                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/02 07:22:13 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/02 07:28:48 by nmauvari         ###   ########.fr       */
+/*   Created: 2017/12/01 09:54:46 by nmauvari          #+#    #+#             */
+/*   Updated: 2017/12/01 10:30:14 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef H_H
+# define HNOTHING
 
-int		main(int ac, char **av)
-{
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
 
-	if (ac == 3)
-	{
-		unsigned char ua = *av[1];
-		unsigned char ub = *av[2];
-		printf("unsigned char subtraction: %u", ua - ub); 
+# include "libft.h"
 
-		char a = *av[1];
-		char b = *av[2];
-		printf("\nsigned char subtraction: %d", (unsigned char)(a - b));
-	}
-	return (0);
-}
+# define ATOI 1
+# define ITOA 9
+# define MEMCPY 13
+# define PUTNBR 16
+# define STRRCHR 19
+# define STRITER 191
+# define STRITERI 192
+# define STRMAP 193
+# define STREQU 194
+# define STRNEQU 195
+# define STRSUB 196
+# define STRJOIN 197
+# define STRSPLIT 198
+
+#endif
