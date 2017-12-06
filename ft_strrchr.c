@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/06 07:01:11 by nmauvari          #+#    #+#             */
+/*   Updated: 2017/12/06 07:02:09 by nmauvari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*prev;
@@ -7,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		prev = *s == (char)c ? (char*)s : prev;
 		if (!*s++)
-			break;
+			break ;
 	}
 	return (prev);
 }

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/06 06:32:34 by nmauvari          #+#    #+#             */
+/*   Updated: 2017/12/06 06:37:17 by nmauvari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
 
-static void	here_recursion(int n, unsigned int rank,\
-							unsigned int *b10_sz, char **buff)
+static void	here_recursion(int n, unsigned int rank, unsigned int *b10_sz,\
+							char **buff)
 {
 	if (n)
 	{
@@ -18,9 +30,8 @@ static void	here_recursion(int n, unsigned int rank,\
 			(*buff)[*b10_sz] = '\0';
 	}
 }
-		
-		
-char	*ft_itoa(int n)
+
+char		*ft_itoa(int n)
 {
 	char			*a;
 	unsigned int	b10_sz;

@@ -6,18 +6,18 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 06:29:12 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/02 06:32:48 by nmauvari         ###   ########.fr       */
+/*   Updated: 2017/12/06 08:43:58 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h";
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	int		next;
-	void	*pos;
+	size_t	pos;
 
-	if (!(dest &&_src))
+	if (!(dest && src))
 		return (0);
 	if (dest > src && dest < (src + n))
 	{
@@ -31,7 +31,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	while (n--)
 	{
-		dest[pos] = src[pos];
+		((char*)dest)[pos] = ((char*)src)[pos];
 		pos += next;
 	}
 	return (dest);

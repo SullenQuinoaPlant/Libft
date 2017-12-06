@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/06 07:00:46 by nmauvari          #+#    #+#             */
+/*   Updated: 2017/12/06 08:57:11 by nmauvari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <string.h>
 
@@ -39,14 +51,14 @@ static void		fill_splits_ar(char **ar, char const *s, char c)
 		while (!(*s ^ c) && *s)
 			s++;
 	}
-	*ar = '\0';
+	*ar = 0;
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
 	size_t	count;
 	char	**ar;
-	
+
 	count = count_strings(s, c);
 	if ((ar = malloc(++count * sizeof(char*))))
 		fill_splits_ar(ar, s, c);

@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 08:31:14 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/01 10:40:32 by nmauvari         ###   ########.fr       */
+/*   Updated: 2017/12/06 06:27:11 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int		ft_atoi(const char *nptr)
 		return (0);
 	while (!((*nptr ^ ' ') && (*nptr ^ '\t') && (*nptr ^ '\n')))
 		nptr++;
-//	if ((sign = *nptr == '-' || *nptr == '+' ? 1 : 0))
-//		sign = *(nptr++) == '-' ? -1 : 1; // this is incomplete, missing an else for case when there is no sign, otherwise always sends zero. which is why switched to below.
 	sign = *nptr == '-' || *nptr == '+' ? 44 - *(nptr++) : 1;
 	res = 0;
 	while (*nptr >= '0' && *nptr <= '9')
