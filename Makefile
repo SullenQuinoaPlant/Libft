@@ -25,13 +25,15 @@ OBJS =  ft_atoi.o  ft_bzero.o  ft_isalnum.o  ft_isalpha.o  ft_isascii.o\
 		ft_strrchr.o ft_strsplit.o ft_strstr.o ft_strsub.o ft_strtrim.o\
 		ft_tolower.o ft_toupper.o
 
+GCCFLAGS =
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
-	gcc -Wall -Wextra -Werror -c $<
+	gcc -Wall -Wextra -Werror -c $(GCCFLAGS) $<
 
 clean:
 	-rm *.o
@@ -40,3 +42,9 @@ fclean: clean
 	-rm $(NAME)
 
 re: fclean all
+
+set_flags:
+	$(eval GCCFLAGS = -fPIC)
+
+so: set_flags $(OBJS)
+	gcc -shared -Wl,-soname,libft.so -o libft.so $(OBJS)
