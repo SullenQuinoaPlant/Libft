@@ -14,8 +14,9 @@
 
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	if (!(dest && src))
-		return (0);
+	char	*sv;
+
+	sv = dest;
 	while (n--)
 	{
 		*(dest++) = *(src);
@@ -24,5 +25,5 @@ char	*ft_strncpy(char *dest, const char *src, size_t n)
 	}
 	while (n--)
 		*(dest++) = '\0';
-	return (dest - n);
+	return (sv);
 }

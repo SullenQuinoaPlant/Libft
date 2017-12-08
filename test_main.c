@@ -151,24 +151,42 @@ int		main(int ac, char **av)
 #elif TF == STRNCPY
 	if (ac == 3)
 	{
+		char	*src = "--> nyancat <--\n\r";
+		char	dst1[30];
+		char	dst2[30];
+		size_t	max = 12;
+
+		memset(dst1, 'B', sizeof(dst1));
+		memset(dst2, 'B', sizeof(dst2));
+
+		strncpy(dst1, src, max);
+		ft_strncpy(dst2, src, max);
+		if (memcmp(dst1, dst2, 29)){
+			printf("\ndst1 and dst2 are not identical");
+		}
 		char	*n;
 		char	*nn;
-		char	*rn;
-		char	*rnn;
+		char	*rn = 0;
+		char	*rnn = 0;
 		size_t	l;
+		char	ar[100];
+		char	arr[100];
 
-		l = strlen(av[1]);
-		if ((n = malloc(l + 1)) && (nn = malloc(l + 1)))
-		{
-			rn = ft_strncpy(n, av[1], atoi(av[2]));
-			printf("\ncopied string is : %s", rn);
-			rnn = strncpy(nn, av[1], atoi(av[2]));
-			printf("\nstrncpy gave: %s", rnn);
-			if (!memcmp(rn, rnn, l + 1))
-				printf("\n hurray, are equal");
-		}
-		free(n);
-		free(nn);
+		(void)rn;
+		(void)rnn;
+
+//		l = (size_t)atoi(av[2]);
+		l = strlen(src);
+//		l = 2;
+		memset(ar, 0, 99);
+		memset(arr, 0, 99);
+		write(1, "hey", 3);
+		printf("\n l is : %lu", (unsigned long)l);
+		n = strncpy(ar, (const char*)src, l); 
+		nn = ft_strncpy(arr, (const char*)src, l);
+		printf("\nstring copied from ft_strncpy is: %s", nn);
+		if (memcmp(n, nn, l))
+			printf("\n results not equal");
 	}
 	else
 		printf("\nstrncpy test requires exactly 2 arguments");

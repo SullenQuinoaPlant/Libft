@@ -33,5 +33,6 @@
 # define STRSUB 196
 # define STRJOIN 197
 # define STRSPLIT 198
+# define STRNCPY 199
 
 #endif
