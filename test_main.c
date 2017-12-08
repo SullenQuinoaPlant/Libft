@@ -148,6 +148,30 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("test of ft_strmap requires exactly one argument");
+#elif TF == STRNCPY
+	if (ac == 3)
+	{
+		char	*n;
+		char	*nn;
+		char	*rn;
+		char	*rnn;
+		size_t	l;
+
+		l = strlen(av[1]);
+		if ((n = malloc(l + 1)) && (nn = malloc(l + 1)))
+		{
+			rn = ft_strncpy(n, av[1], atoi(av[2]));
+			printf("\ncopied string is : %s", rn);
+			rnn = strncpy(nn, av[1], atoi(av[2]));
+			printf("\nstrncpy gave: %s", rnn);
+			if (!memcmp(rn, rnn, l + 1))
+				printf("\n hurray, are equal");
+		}
+		free(n);
+		free(nn);
+	}
+	else
+		printf("\nstrncpy test requires exactly 2 arguments");
 #elif TF == STRSUB
 	if (ac == 4)
 	{

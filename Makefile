@@ -27,10 +27,31 @@ OBJS =  ft_atoi.o  ft_bzero.o  ft_isalnum.o  ft_isalpha.o  ft_isascii.o\
 
 GCCFLAGS =
 
+A_STAMPS = was_liba is_liba
+SO_STAMPS = was_libso is_libso
+
 all: $(NAME)
 
-$(NAME): $(OBJS)
+is_liba: was_libso
+	touch $(patsubst %.o, %.c, $(OBJS))
+
+was_liba:
+
+$(NAME): is_liba $(OBJS)
 	ar rcs $(NAME) $(OBJS)
+	touch $(A_STAMPS)
+
+is_libso: was_liba
+	touch $(patsubst %.o, %.c, $(OBJS))
+
+was_libso:
+
+set_flags_so:
+	$(eval GCCFLAGS = -fPIC)
+
+so: is_libso set_flags_so $(OBJS)
+	gcc -shared -Wl,-soname,libft.so -o libft.so $(OBJS)
+	touch $(SO_STAMPS)
 
 %.o: %.c
 	gcc -Wall -Wextra -Werror -c $(GCCFLAGS) $<
@@ -40,11 +61,6 @@ clean:
 
 fclean: clean
 	-rm $(NAME)
+	-rm $(SO_STAMPS) $(A_STAMPS)
 
 re: fclean all
-
-set_flags:
-	$(eval GCCFLAGS = -fPIC)
-
-so: set_flags $(OBJS)
-	gcc -shared -Wl,-soname,libft.so -o libft.so $(OBJS)
