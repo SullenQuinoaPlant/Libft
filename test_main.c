@@ -31,7 +31,12 @@ int		main(int ac, char **av)
 		}
 	}
 	else
-		printf("ft_atoi requires exactly one string as argument");
+	{
+		char	*str = "\t\v\r\f\n \t-  456";
+		
+		printf("atoi is : %d\n", atoi(str));
+		printf("\nft_atoi is :%d", ft_atoi(str));
+	}
 #elif TF == ITOA
 	if (ac == 2)
 	{
