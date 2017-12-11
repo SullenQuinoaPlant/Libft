@@ -24,11 +24,8 @@ int		main(int ac, char **av)
 #elif TF == ATOI
 	if (ac == 2)
 	{
-		if (atoi(av[1]) != ft_atoi(av[1]))
-		{
-			printf("atoi is : %d\n", atoi(av[1]));
-			printf("\nft_atoi is :%d", ft_atoi(av[1]));
-		}
+		printf("atoi is : %d\n", atoi(av[1]));
+		printf("\nft_atoi is :%d", ft_atoi(av[1]));
 	}
 	else
 	{

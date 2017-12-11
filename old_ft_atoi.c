@@ -15,32 +15,20 @@
 int		ft_atoi(const char *nptr)
 {
 	unsigned int		res;
-	unsigned int		ref;
-	unsigned int		comp;
-	unsigned int		save;
-	int					fail;
+	int					sign;
 
 	if (!nptr)
 		return (0);
 	while (!((*nptr ^ ' ') && ((*nptr < '\t') || (*nptr > '\r'))))
 		nptr++;
-	ref = *nptr == '-' ? 0x80000000 : 0x7fffffff;
-	*nptr == '-' || *nptr == '+' ? nptr++ : nptr;
+	sign = *nptr == '-' || *nptr == '+' ? 44 - *(nptr++) : 1;
 	res = 0;
-	fail = 0;
-	while (!fail && *nptr >= '0' && *nptr <= '9')
+	while (*nptr >= '0' && *nptr <= '9')
 	{
-		comp = fail ? comp : res << 1;
-		res = comp > ref || comp < res ? (fail = 1), ref : comp;
-		save = res;
-		comp = fail ? comp : res << 1;
-		res = comp > ref || comp < res ? (fail = 1), ref : comp;
-		comp = fail ? comp : res << 1;
-		res = comp > ref || comp < res ? (fail = 1), ref : comp;
-		comp = fail ? comp : res + save;
-		res = comp > ref || comp < res ? (fail = 1), ref : comp;
-		comp = fail ? comp : res + (*nptr++ - '0');
-		res = comp > ref || comp < res ? (fail = 1), ref : comp;
+		res = 10 * res + (*(nptr++) - '0');
 	}
-	return (ref == 0x80000000 ? (~res) + 1 : res);
+	if (res > 0x7fffffff)
+		return (sign * (-0x80000000 + (int)(res - 0x80000000)));
+	else
+		return (sign * (int)res);
 }
