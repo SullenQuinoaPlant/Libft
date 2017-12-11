@@ -18,7 +18,7 @@ int		ft_strcmp(const char *s1, const char *s2)
 	int		diff;
 
 	index = 0;
-	while (!(diff = s1[index] - s2[index]) && s1[index++])
+	while (!(diff = (0xff & s1[index]) - (0xff & s2[index])) && s1[index++])
 		;
 	return (diff);
 }
