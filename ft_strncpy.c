@@ -17,8 +17,9 @@ char	*ft_strncpy(char *dest, const char *src, size_t n)
 	char	*sv;
 
 	sv = dest;
-	while (n--)
+	while (n)
 	{
+		n--;
 		*(dest++) = *(src);
 		if (!(*src++))
 			break ;
