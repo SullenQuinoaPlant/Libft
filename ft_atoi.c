@@ -20,8 +20,6 @@ int		ft_atoi(const char *nptr)
 	unsigned int		save;
 	int					fail;
 
-	if (!nptr)
-		return (0);
 	while (!((*nptr ^ ' ') && ((*nptr < '\t') || (*nptr > '\r'))))
 		nptr++;
 	ref = *nptr == '-' ? 0x80000000 : 0x7fffffff;

@@ -17,17 +17,21 @@ char	*ft_strtrim(char const *s)
 	char	*ss;
 	size_t	l;
 
-	while (!(*s ^ ' ' || *s ^ '\t' || *s ^ '\n'))
+	while (!(*s ^ ' ' && *s ^ '\t' && *s ^ '\n'))
 		s++;
 	l = 0;
 	while (s[l])
 		l++;
-	if (l--)
-		while (!(s[l] ^ ' ' || s[l] ^ '\t' || s[l] ^ '\n'))
-			l--;
-	if ((ss = malloc(l + 2)))
+	if (l)
 	{
-		ss[++l] = '\0';
+		l--;
+		while (l && !(s[l] ^ ' ' && s[l] ^ '\t' && s[l] ^ '\n'))
+			l--;
+		l++;
+	}
+	if ((ss = malloc(l + 1)))
+	{
+		ss[l] = '\0';
 		while (l--)
 			ss[l] = s[l];
 	}

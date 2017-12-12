@@ -29,7 +29,8 @@ int		main(int ac, char **av)
 	}
 	else
 	{
-		char	*str = "\t\v\r\f\n \t-  456";
+		//char	*str = "\t\v\r\f\n \t-  456";
+		char	*str = "";
 		
 		printf("atoi is : %d\n", atoi(str));
 		printf("\nft_atoi is :%d", ft_atoi(str));

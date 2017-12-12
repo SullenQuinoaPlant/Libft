@@ -17,11 +17,16 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*ss;
 	size_t	l;
 
+	if (!(s && f))
+		return 0;
 	l = 0;
 	while (s[l])
 		l++;
 	if ((ss = malloc(l + 1)))
+	{
+		ss[l] = '\0';
 		while (l--)
 			ss[l] = f((unsigned int)l, s[l]);
+	}
 	return (ss);
 }
