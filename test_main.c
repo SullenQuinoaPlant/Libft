@@ -74,6 +74,10 @@ int		main(int ac, char **av)
 		write(1, "\nin dummy", strlen("\nin dummy") + 1);
 		write(1, (char*)elem->content, 1);
 	}
+	void	nowrite(t_list *foff)
+	{
+		(void)foff;
+	}
 	void	dummy(void *content, size_t size)
 	{
 		(void)content;
@@ -90,17 +94,22 @@ int		main(int ac, char **av)
 	ft_lstadd(&head, c);
 	ft_lstadd(&head, b);
 	ft_lstadd(&head, a);
+	ft_lstiter(a, nowrite);
+//	ft_lstiter(head, nowrite);
 //	ft_lstiter(head, &lwrite);
 	//ft_lstiter(a, print);
-	if (0 || a || b || c)
+	if (head == a)
+		printf("\nhead == a");
+	if (head && ( a || b || c))
 	{
+		printf("\n head gives: %s", (char*)head->content);
 		printf("\na: %s, b: %s, c: %s",\
 				 (a ? (char*)a->content : "a del"),\
 				 (b ? (char*)b->content : "b del"),\
 				 (c ? (char*)c->content : "c del"));
 	}
-//	write(1, "\nbefore del", strlen("\nbefore del") + 1);
-	ft_lstdel(&head, &del);
+	write(1, "\nbefore del", strlen("\nbefore del") + 1);
+//	ft_lstdel(&head, &del);
 	if (head)
 		printf("\n head should be null");
 	else
