@@ -41,15 +41,13 @@ static void		fill_splits_ar(char **ar, char const *s, char c)
 		l = 0;
 		while (s[l] ^ c && s[l])
 			l++;
-		if ((*ar = malloc(l + 1)))
+		if ((*ar = l ? malloc(l + 1) : 0))
 		{
 			ll = 0;
 			while (l--)
 				(*ar)[ll++] = *s++;
 			(*(ar++))[ll] = '\0';
 		}
-		while (!(*s ^ c) && *s)
-			s++;
 	}
 	*ar = 0;
 }

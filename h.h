@@ -22,6 +22,7 @@
 
 # define ATOI 1
 # define ITOA 9
+# define LSTDEL 12
 # define MEMCPY 13
 # define PUTNBR 16
 # define STRRCHR 19

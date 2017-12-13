@@ -71,4 +71,4 @@ fclean: clean
 re: fclean all
 
 test: all
-	gcc $(GCCFLAGS) -D "TF=$(TF)" -o tf.exe test_main.c $(NAME)
+	gcc $(GCCFLAGS) -g -D "TF=$(TF)" -o tf.exe test_main.c $(NAME)

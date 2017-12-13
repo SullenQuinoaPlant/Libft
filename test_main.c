@@ -59,6 +59,60 @@ int		main(int ac, char **av)
 			buff[l] = '\0';
 		free(buff);
 	}
+#elif TF == LSTDEL
+	void	del(void *content, size_t size)
+	{
+		(void)size;
+		free(content);
+	}
+	void	print(t_list *elem)
+	{
+		printf("\nfrom print, as string: %s", (char*)(elem->content));
+	}
+	void	lwrite(t_list *elem)
+	{
+		write(1, "\nin dummy", strlen("\nin dummy") + 1);
+		write(1, (char*)elem->content, 1);
+	}
+	void	dummy(void *content, size_t size)
+	{
+		(void)content;
+		(void)size;
+	}
+	t_list	*head;
+	t_list	*a;
+	t_list	*b;
+	t_list	*c;
+
+	a = ft_lstnew("a", 2);
+	b = ft_lstnew("b", 2);
+	c = ft_lstnew("c is special", 13);
+	ft_lstadd(&head, c);
+	ft_lstadd(&head, b);
+	ft_lstadd(&head, a);
+//	ft_lstiter(head, &lwrite);
+	//ft_lstiter(a, print);
+	if (0 || a || b || c)
+	{
+		printf("\na: %s, b: %s, c: %s",\
+				 (a ? (char*)a->content : "a del"),\
+				 (b ? (char*)b->content : "b del"),\
+				 (c ? (char*)c->content : "c del"));
+	}
+//	write(1, "\nbefore del", strlen("\nbefore del") + 1);
+	ft_lstdel(&head, &del);
+	if (head)
+		printf("\n head should be null");
+	else
+	{
+//		free(a); free(b); free(c);
+		t_list	*d = malloc(sizeof(t_list));
+		if (d)
+		{
+			free(d);
+//			free(d);
+		}
+	}
 #elif TF == MEMCPY
 	if (ac == 2)
 	{
