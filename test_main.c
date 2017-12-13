@@ -88,16 +88,22 @@ int		main(int ac, char **av)
 	t_list	*b;
 	t_list	*c;
 
+	head = 0;	
 	a = ft_lstnew("a", 2);
 	b = ft_lstnew("b", 2);
 	c = ft_lstnew("c is special", 13);
+	if (c->next)
+		printf("\ni hate this shit");
+//	ft_lstiter(c, &nowrite);
 	ft_lstadd(&head, c);
 	ft_lstadd(&head, b);
 	ft_lstadd(&head, a);
-	ft_lstiter(a, nowrite);
+	if (c->next)
+		printf("\ni hate this shit");
+//	ft_lstiter(a, &nowrite);
 //	ft_lstiter(head, nowrite);
 //	ft_lstiter(head, &lwrite);
-	//ft_lstiter(a, print);
+	ft_lstiter(head, print);
 	if (head == a)
 		printf("\nhead == a");
 	if (head && ( a || b || c))
