@@ -36,4 +36,5 @@
 # define STRSPLIT 198
 # define STRNCPY 199
 
+void	delthis(t_list**, void(*f)(void*, size_t));
 #endif

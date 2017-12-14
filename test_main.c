@@ -88,46 +88,44 @@ int		main(int ac, char **av)
 	t_list	*b;
 	t_list	*c;
 
-	head = 0;	
+	head = 0;
 	a = ft_lstnew("a", 2);
+	printf("\n address stored at a is :%lu", (unsigned long)a);
 	b = ft_lstnew("b", 2);
+	printf("\n address stored at b is :%lu", (unsigned long)b);
 	c = ft_lstnew("c is special", 13);
-	if (c->next)
-		printf("\ni hate this shit");
-//	ft_lstiter(c, &nowrite);
+	printf("\n address stored at c is :%lu", (unsigned long)c);
 	ft_lstadd(&head, c);
 	ft_lstadd(&head, b);
 	ft_lstadd(&head, a);
-	if (c->next)
-		printf("\ni hate this shit");
-//	ft_lstiter(a, &nowrite);
-//	ft_lstiter(head, nowrite);
-//	ft_lstiter(head, &lwrite);
-	ft_lstiter(head, print);
-	if (head == a)
-		printf("\nhead == a");
-	if (head && ( a || b || c))
+	if (1)
 	{
-		printf("\n head gives: %s", (char*)head->content);
+		printf("\n head gives: %s", head ? (char*)head->content : "head set to null");
 		printf("\na: %s, b: %s, c: %s",\
 				 (a ? (char*)a->content : "a del"),\
 				 (b ? (char*)b->content : "b del"),\
 				 (c ? (char*)c->content : "c del"));
 	}
-	write(1, "\nbefore del", strlen("\nbefore del") + 1);
+	printf("\n starting to delete\r");
+	printf("\n address stored at head is :%lu", (unsigned long)head);
+	printf("\n address stored at a is :%lu\n", (unsigned long)a);
+	delthis(&head, &del);
+	delthis(&a, &del);
 //	ft_lstdel(&head, &del);
-	if (head)
-		printf("\n head should be null");
-	else
+	printf("\n address stored at head is :%lu", (unsigned long)head);
+	printf("\n address stored at a is :%lu\n", (unsigned long)a);
+	free(a);
+	printf("\n address stored at a is :%lu\n", (unsigned long)a);
+//	ft_lstdel(&head, &del);
+//	delthis(&head);
+//	delthis(&head);
+//	free(a);
+	void	stupiddel(t_list **delthis)
 	{
-//		free(a); free(b); free(c);
-		t_list	*d = malloc(sizeof(t_list));
-		if (d)
-		{
-			free(d);
-//			free(d);
-		}
+		free(*delthis);
 	}
+//	delthis(&a);
+//	stupiddel(&a);
 #elif TF == MEMCPY
 	if (ac == 2)
 	{
