@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 06:57:39 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/06 07:02:09 by nmauvari         ###   ########.fr       */
+/*   Updated: 2017/12/15 08:39:20 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	l;
 
 	if (!(s && f))
-		return 0;
+		return (0);
 	l = 0;
 	while (s[l])
 		l++;

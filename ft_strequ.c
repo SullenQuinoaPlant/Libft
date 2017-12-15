@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 06:53:23 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/06 06:56:26 by nmauvari         ###   ########.fr       */
+/*   Updated: 2017/12/15 08:38:05 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int		ft_strequ(char const *s1, char const *s2)
 {
 	if (!(s1 && s2))
-		return -1;
+		return (-1);
 	return (ft_strcmp(s1, s2) ? 0 : 1);
 }

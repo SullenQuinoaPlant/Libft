@@ -6,12 +6,13 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 09:43:54 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/06 09:46:48 by nmauvari         ###   ########.fr       */
+/*   Updated: 2017/12/15 06:42:14 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "h.h"
+#include "limits.h"
 
 
 int		main(int ac, char **av)
@@ -31,7 +32,16 @@ int		main(int ac, char **av)
 	{
 		//char	*str = "\t\v\r\f\n \t-  456";
 		char	*str = "";
+		char	n[40];
+
+		sprintf(n, "%li", LONG_MAX);
+		printf("value stored at n is :%s\n", n);
+
+		int		ret_ft = ft_atoi(n);
+		int		ret = atoi(n);
+		printf("\nft_atoi of n gives: %d, atoi gives : %d\n", ret_ft, ret);
 		
+		printf("long max value is : %li", LONG_MAX);
 		printf("atoi is : %d\n", atoi(str));
 		printf("\nft_atoi is :%d", ft_atoi(str));
 	}

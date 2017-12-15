@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 06:45:59 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/06 08:39:05 by nmauvari         ###   ########.fr       */
+/*   Updated: 2017/12/15 08:37:21 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_memdel(void **ap)
 {
 	if (!ap)
-		return;
+		return ;
 	free(*ap);
 	*ap = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 06:58:18 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/06 07:02:09 by nmauvari         ###   ########.fr       */
+/*   Updated: 2017/12/15 08:38:56 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	size_t	l;
 
 	if (!(s && f))
-		return 0;
+		return (0);
 	l = 0;
 	while (s[l])
 		l++;

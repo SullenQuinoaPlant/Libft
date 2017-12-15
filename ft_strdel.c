@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 06:53:14 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/06 06:56:26 by nmauvari         ###   ########.fr       */
+/*   Updated: 2017/12/15 08:37:38 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_strdel(char **as)
 {
 	if (!as)
-		return;
+		return ;
 	free(*as);
 	*as = (void*)0;
 }
