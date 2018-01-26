@@ -6,39 +6,57 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 08:31:14 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/06 06:27:11 by nmauvari         ###   ########.fr       */
+/*   Updated: 2017/12/15 08:20:38 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_atoi(const char *nptr)
+static void	here_init(const char **nptr, unsigned long *ref,\
+					unsigned long *res, int *fail)
 {
-	unsigned int		res;
-	unsigned int		ref;
-	unsigned int		comp;
-	unsigned int		save;
+	while (!((**nptr ^ ' ') && ((**nptr < '\t') || (**nptr > '\r'))))
+		(*nptr)++;
+	*ref = **nptr == '-' ? 0x8000000000000000 : 0x7fffffffffffffff;
+	**nptr == '-' || **nptr == '+' ? (*nptr)++ : (*nptr);
+	*res = 0;
+	*fail = 0;
+}
+
+static int	here_build_res(unsigned long *comp, unsigned long *res,\
+					unsigned long *ref, const char **nptr)
+{
+	unsigned long	save;
+	int				fail;
+
+	*comp = *res << 1;
+	fail = *comp > *ref || *comp < *res ? 1 : 0;
+	*res = *comp;
+	save = *res;
+	*comp = *res << 1;
+	fail = *comp > *ref || *comp < *res ? 1 : 0;
+	*res = *comp;
+	*comp = *comp << 1;
+	fail = *comp > *ref || *comp < *res ? 1 : 0;
+	*res = *comp;
+	*comp = *comp + save;
+	fail = *comp > *ref || *comp < *res ? 1 : 0;
+	*res = *comp;
+	*comp = *comp + (*(*nptr)++ - '0');
+	fail = *comp > *ref || *comp < *res ? 1 : 0;
+	*res = *comp;
+	return (fail);
+}
+
+int			ft_atoi(const char *nptr)
+{
+	unsigned long		res;
+	unsigned long		ref;
+	unsigned long		comp;
 	int					fail;
 
-	while (!((*nptr ^ ' ') && ((*nptr < '\t') || (*nptr > '\r'))))
-		nptr++;
-	ref = *nptr == '-' ? 0x80000000 : 0x7fffffff;
-	*nptr == '-' || *nptr == '+' ? nptr++ : nptr;
-	res = 0;
-	fail = 0;
+	here_init(&nptr, &ref, &res, &fail);
 	while (!fail && *nptr >= '0' && *nptr <= '9')
-	{
-		comp = fail ? comp : res << 1;
-		res = comp > ref || comp < res ? (fail = 1), ref : comp;
-		save = res;
-		comp = fail ? comp : res << 1;
-		res = comp > ref || comp < res ? (fail = 1), ref : comp;
-		comp = fail ? comp : res << 1;
-		res = comp > ref || comp < res ? (fail = 1), ref : comp;
-		comp = fail ? comp : res + save;
-		res = comp > ref || comp < res ? (fail = 1), ref : comp;
-		comp = fail ? comp : res + (*nptr++ - '0');
-		res = comp > ref || comp < res ? (fail = 1), ref : comp;
-	}
-	return (ref == 0x80000000 ? (~res) + 1 : res);
+		fail = here_build_res(&comp, &res, &ref, &nptr);
+	if (fail)
+		return ((int)(ref));
+	return ((int)(ref == 0x8000000000000000 ? (~res) + 1 : res));
 }
