@@ -1,7 +1,5 @@
 os : osx
 language : c
-before_install :
- - sudo apt-get install mutt
 before_script :
  - git clone https://github.com/jgigault/42FileChecker ~/42FileChecker
 script :
