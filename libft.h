@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 06:27:03 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/01/27 06:45:34 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/01/27 08:59:01 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ char			*ft_strdup(const char *s);
 int				ft_strequ(char const *s1, char const *s2);
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
-char			*ft_itoa(int n);
 char			*ft_strjoin(char const *s1, char const *s2);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 size_t			ft_strlen(const char *s);
@@ -79,6 +78,7 @@ char			*ft_strnstr(const char *haystack, const char *needle, size_t n);
 char			*ft_strrchr(const char *s, int c);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_strstr(const char *haystack, const char *needle);
+char			*ft_strtrim(char const *s)
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
