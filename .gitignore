@@ -1,2 +1,11 @@
+libft.a
 *.o
 *.swp
+try*/.git*
+try*/.git*/
+a.out
+is_liba
+is_libso
+was_liba
+was_libso
+tf.exe
