@@ -6,7 +6,7 @@
 #    By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 07:09:48 by nmauvari          #+#    #+#              #
-#    Updated: 2017/12/06 09:01:25 by nmauvari         ###   ########.fr        #
+#    Updated: 2018/01/27 07:59:03 by nmauvari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,3 +72,5 @@ re: fclean all
 
 test: all
 	gcc $(GCCFLAGS) -D "TF=$(TF)" -o tf.exe test_main.c $(NAME)
+
+.PHONY: all clean fclean re test

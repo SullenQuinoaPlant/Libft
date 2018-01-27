@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 09:43:54 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/15 06:42:14 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/01/27 08:47:35 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,6 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("test of ft_itoa requires exactly one arument");
-#elif TF == MEMCCPY
-	if (ac == 2)
-	{
-		size_t	l;
-		char	*buff;
-
-		l = strlen(av[1]);
-		if ((buff = malloc(l + 1))
-			buff[l] = '\0';
-		free(buff);
-	}
 #elif TF == LSTDEL
 	void	del(void *content, size_t size)
 	{
@@ -136,14 +125,36 @@ int		main(int ac, char **av)
 	}
 //	delthis(&a);
 //	stupiddel(&a);
+#elif TF == MEMCMP
+	int		ft_ret;
+	int		ret;
+
+	printf("memcmp test :\n");
+	if (ac == 3)
+	{
+		ft_ret = ft_memcmp(av[1], av[2], strlen(av[1]));
+		ret = memcmp(av[1], av[2], strlen(av[1]));
+		if (ft_ret != ret)
+			printf("\nyou fucked up");
+	}
+	else
+	{
+		ft_ret = ft_memcmp("aoeu", "mmm", 0);
+		ret = memcmp("aoeu", "mmm", 0);
+		if (ft_ret != ret)
+		{
+			printf("\nft_ret is : %d, \nret is : %d", ft_ret, ret);
+			printf("\nyou fucked up");
+		}
+	}
 #elif TF == MEMCPY
 	if (ac == 2)
 	{
 		char    *dest;
-        size_t  length;
+		size_t  length;
 
-        length = strlen(av[1]);
-        if (!(dest = malloc(length + 1)))
+		length = strlen(av[1]);
+		if (!(dest = malloc(length + 1)))
 		{
 			printf("malloc call failed, in MEMCPY test\n");
 			return (0);
@@ -217,17 +228,38 @@ int		main(int ac, char **av)
 #elif TF == STRMAP
 	if (ac == 2)
 	{
-		char	*s;
-		char	here_f(char c)
-		{
-			return (c + 1);
-		}
+//		char	*s;
+//		char	here_f(char c)
+//		{
+//			return (c + 1);
+//		}
+//
+//		s = ft_strmap(av[1], here_f);
+//		printf("\nresult of ft_strmap is :\n%s", s);
+//	}
+//	else
+//		printf("test of ft_strmap requires exactly one argument");
+#elif TF == STRNCMP
+	int		ft_ret;
+	int		ret;
 
-		s = ft_strmap(av[1], here_f);
-		printf("\nresult of ft_strmap is :\n%s", s);
+	if (ac == 3)
+	{
+		ft_ret = ft_strncmp(av[1], av[2], strlen(av[1]));
+		ret = strncmp(av[1], av[2], strlen(av[1]));
+		if (ft_ret != ret)
+			printf("\nyou fucked up");
 	}
 	else
-		printf("test of ft_strmap requires exactly one argument");
+	{
+		ft_ret = ft_strncmp("aoeu", "mmm", 0);
+		ret = strncmp("aoeu", "mmm", 0);
+		if (ft_ret != ret)
+		{
+			printf("\nft_ret is : %d, \nret is : %d", ft_ret, ret);
+			printf("\nyou fucked up");
+		}
+	}
 #elif TF == STRNCPY
 	if (ac == 3)
 	{

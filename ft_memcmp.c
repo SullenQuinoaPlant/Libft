@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 06:43:36 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/02 09:02:47 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/01/27 08:16:31 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
+	if (!n)
+		return (0);
 	while (--n && *((char*)s1) == *((char*)s2))
 	{
 		s1 = (char*)s1 + 1;
