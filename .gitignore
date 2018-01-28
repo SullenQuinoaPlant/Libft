@@ -1,6 +1,7 @@
 libft.a
 *.o
 *.swp
+*.swo
 try*/.git*
 try*/.git*/
 a.out
