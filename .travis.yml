@@ -7,5 +7,6 @@ before_install :
 
 script :
  - make
- - bash ~/42FileChecker/42FileChecker.sh --project "libft" --path "$(pwd)"
- - find -L ~/42FileChecker/ -name .mymoulitest -print
+ - chmod a+x ~/42FileChecker/42FileChecker.sh
+ - ~/42FileChecker/42FileChecker.sh --project "libft" --path "$(pwd)"
+ - find -L ~/42FileChecker/ -name .mymoulitest -print | cat
