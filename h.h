@@ -6,12 +6,12 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 09:54:46 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/01 10:30:14 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/01/28 06:26:05 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef H_H
-# define HNOTHING
+# define H_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -34,6 +34,7 @@
 # define STRSUB 196
 # define STRJOIN 197
 # define STRSPLIT 198
+# define STRTRIM 1981
 # define STRNCPY 199
 
 void	delthis(t_list**, void(*f)(void*, size_t));

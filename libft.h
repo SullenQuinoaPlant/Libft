@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 06:27:03 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/01/27 08:59:01 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/01/28 06:14:05 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char			*ft_strnstr(const char *haystack, const char *needle, size_t n);
 char			*ft_strrchr(const char *s, int c);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_strstr(const char *haystack, const char *needle);
-char			*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 int				ft_toupper(int c);

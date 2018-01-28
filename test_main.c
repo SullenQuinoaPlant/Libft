@@ -6,13 +6,13 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 09:43:54 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/01/27 08:47:35 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/01/28 06:30:19 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "h.h"
-#include "limits.h"
+#include <limits.h>
 
 
 int		main(int ac, char **av)
@@ -351,6 +351,21 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("\nft_strsplit test requires exactly two arguments.");
+#elif TF == STRTRIM
+	char	*ret_str;
+
+	if (ac == 2)
+	{
+		ret_str = ft_strtrim(av[1]);
+		printf("\nret_str is :%s\n", ret_str);
+		free(ret_str);
+	}
+	else
+	{
+		ret_str = ft_strtrim("\n\t AAA \t BBB \t\n");
+		printf("\nret_str is :%s\n", ret_str);
+		free(ret_str);
+	}
 #else
 	printf("no function selection was made");
 #endif
