@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 09:54:46 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/01/28 06:26:05 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/01/28 06:46:52 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <string.h>
+# include <ctype.h>
 
 # include "libft.h"
 
 # define ATOI 1
+# define ISALPHA 2
 # define ITOA 9
 # define LSTDEL 12
 # define MEMCPY 13

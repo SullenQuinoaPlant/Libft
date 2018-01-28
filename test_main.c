@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 09:43:54 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/01/28 06:30:19 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/01/28 06:46:19 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,17 @@ int		main(int ac, char **av)
 		printf("long max value is : %li", LONG_MAX);
 		printf("atoi is : %d\n", atoi(str));
 		printf("\nft_atoi is :%d", ft_atoi(str));
+	}
+#elif TF == ISALPHA
+	int		i;
+
+	i = -300;
+	while (i < 300)
+	{
+		if (isalpha(i) != ft_isalpha(i))
+			printf("error at %d, isalpha: %d, ft_isalhpa: %d\n", i, isalpha(i),\
+				   		ft_isalpha(i));
+		i++;
 	}
 #elif TF == ITOA
 	if (ac == 2)
