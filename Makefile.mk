@@ -56,7 +56,7 @@ set_flags_so:
 	$(eval GCCFLAGS += -fPIC -shared)
 
 so: is_libso $(OBJS) set_flags_so 
-	gcc $(GCCFLAGS) -Wl, -o $(SO_NAME) $(OBJS)
+	gcc $(GCCFLAGS) -Wl,-soname,libft.so -o $(SO_NAME) $(OBJS)
 	touch $(SO_STAMPS)
 
 %.o: %.c
