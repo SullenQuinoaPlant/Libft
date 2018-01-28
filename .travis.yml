@@ -1,13 +1,12 @@
 language : c
 
 before_install :
- - echo '\n42FileChecker installation starting\n'
  - git clone https://github.com/jgigault/42FileChecker ~/42FileChecker
- - echo '\n42FileChecker installation complete\n'
+ - chmod a+x ~/42FileChecker/42FileChecker.sh
+ - sudo apt-get install libbds-dev
 
 script :
  - make
- - chmod a+x ~/42FileChecker/42FileChecker.sh
  - ~/42FileChecker/42FileChecker.sh --project "libft" --path "$(pwd)"
  - cat ~/42FileChecker/.mymoulitest
  - cat ~/42FileChecker/.mylibftunittest
