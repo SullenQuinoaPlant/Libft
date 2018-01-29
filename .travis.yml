@@ -1,10 +1,11 @@
-os : osx
-
 language : c
 
-before_install :
- - git clone https://github.com/jgigault/42FileChecker ~/42FileChecker
- - chmod a+x ~/42FileChecker/42FileChecker.sh
+os :
+ - linux
+ - osx
+
+install:
+ - source .travis/install.sh
 
 script :
  - make test TF=NO_TEST && make unit_tests
