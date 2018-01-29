@@ -10,11 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 static void	here_init(const char **nptr, unsigned long *ref,\
 					unsigned long *res, int *fail)
 {
 	while (!((**nptr ^ ' ') && ((**nptr < '\t') || (**nptr > '\r'))))
 		(*nptr)++;
+	
+	size_t i;
+	unsigned long a;
+	i = sizeof(unsigned long) * 8 - 1;
+	printf("i is : %zd\n", i);
+	a = 1;
+	printf("a is : %llu\n", a);
+	while (i--)
+			a <<= 1;
+	printf("a is : %llu\n", a);
+	*ref = a;
 	*ref = 0x1 << (sizeof(unsigned long) * 8 - 1);
 	*ref -= **nptr == '-' ? 0 : 1;
 //	*ref = **nptr == '-' ? 0x8000000000000000 : 0x7fffffffffffffff;
