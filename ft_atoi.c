@@ -15,7 +15,9 @@ static void	here_init(const char **nptr, unsigned long *ref,\
 {
 	while (!((**nptr ^ ' ') && ((**nptr < '\t') || (**nptr > '\r'))))
 		(*nptr)++;
-	*ref = **nptr == '-' ? 0x8000000000000000 : 0x7fffffffffffffff;
+	*ref = 1 << sizeof(long) * 4 - 1;
+	*ref -= **nptr == '-' ? 0 : 1;
+//	*ref = **nptr == '-' ? 0x8000000000000000 : 0x7fffffffffffffff;
 	**nptr == '-' || **nptr == '+' ? (*nptr)++ : (*nptr);
 	*res = 0;
 	*fail = 0;
