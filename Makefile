@@ -18,12 +18,12 @@ test: all
 	gcc $(GCCFLAGS) -D "$(TF)=1" -o tf.exe test_main.c $(NAME)
 
 libft:
-	cp ft_*.c libft/
-	cp auteur libft/
+	cp ft_*.c libft
+	cp auteur libft
 	cp Makefile.mk libft/Makefile
-	cp libft.h libft/
+	cp libft.h libft
 
 unit_tests: libft
-	make -C ./libft-unit-tests/
+	make -C ./libft-unit-tests/ f
 
 .PHONY: test
