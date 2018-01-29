@@ -34,6 +34,7 @@ SO_STAMPS = was_libso is_libso
 all: $(NAME)
 
 was_libso:
+	echo "yo"
 	touch was_libso
 
 is_liba: was_libso
@@ -62,7 +63,6 @@ clean:
 fclean: clean
 	-rm $(NAME) $(SO_NAME)
 	-rm $(SO_STAMPS) $(A_STAMPS)
-	-rm $(SO_NAME)
 
 re: fclean all
 
