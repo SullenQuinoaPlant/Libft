@@ -26,4 +26,4 @@ libft:
 unit_tests: libft
 	make -C ./libft-unit-tests/ f
 
-.PHONY: test
+.PHONY: test libft
