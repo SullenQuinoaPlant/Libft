@@ -1,12 +1,14 @@
 language : c
 
-os :
- - linux
- - osx
+matrix :
+ include :
+  - os : linux
+    sudo : required
+  - os : osx
 
 install:
  - echo installing
- - source .travis/install.sh
+ - source ./.travis/install.sh
  - echo 'install done'
 
 script :
