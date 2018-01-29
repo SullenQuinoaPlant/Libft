@@ -20,7 +20,7 @@ int		main(int ac, char **av)
 	(void) ac;
 	(void) av;
 
-#ifndef TF
+#ifdef NO_TEST
 	printf("no function selection was made");
 #elif ATOI
 	if (ac == 2)

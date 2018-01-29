@@ -59,7 +59,7 @@ so: is_libso set_flags_so $(OBJS)
 	touch $(SO_STAMPS)
 
 %.o: %.c
-	gcc -c $(GCCFLAGS) $<
+	@gcc -c $(GCCFLAGS) $<
 
 clean:
 	-rm *.o
