@@ -28,7 +28,7 @@ static void	here_init(const char **nptr, unsigned long *ref,\
 			a <<= 1;
 	printf("a is : %lu\n", a);
 	*ref = a;
-//	*ref = 0x1 << (sizeof(unsigned long) * 8 - 1);
+	*ref = 0x1ul << (sizeof(unsigned long) * 8 - 1);
 	*ref -= **nptr == '-' ? 0 : 1;
 //	*ref = **nptr == '-' ? 0x8000000000000000 : 0x7fffffffffffffff;
 	**nptr == '-' || **nptr == '+' ? (*nptr)++ : (*nptr);
