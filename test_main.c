@@ -61,7 +61,7 @@ int		main(int ac, char **av)
 	i = -1;
 	while (i < 530)
 	{
-		if (!!ft_isalnum(i) != !!isalnum(i))
+		if (!!ft_isalnum(i) != !!isalnum((unsigned char)i))
 			printf("/nisulnum failed on: %d,\
 					ft_isalnum : %d,\
 					isalnum : %d,\
