@@ -14,14 +14,14 @@
 #include <string.h>
 #include "libft.h"
 
-static int	check_input(char const *s, unsigned int start, size_t const len)
+static int	check_input(char const *s, unsigned int start, size_t const *len)
 {
-	size_t	new_len;
+	size_t	available;
 
-	new_len = ft_strlen(s);
-	new_len -= start < new_len ? start : new_len;
-	new_len = len <= new_len ? len : 0;
-	return (new_len);
+	available = ft_strlen(s);
+	if (start + *len > available)
+		return (0);
+	return (1);
 }
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
@@ -31,8 +31,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	ss = 0;
 	if (s)
 	{
-		len = check_input(s, start, len);
-		if (len && (ss = malloc(len + 1)))
+		if (check_input(s, start, &len) && (ss = malloc(len + 1)))
 		{
 			ss[len] = '\0';
 			while (len--)
