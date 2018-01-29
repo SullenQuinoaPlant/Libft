@@ -34,6 +34,7 @@ SO_STAMPS = was_libso is_libso
 all: $(NAME)
 
 was_libso:
+	touch $(OBJS)
 	touch was_libso
 
 is_liba: was_libso
@@ -44,6 +45,7 @@ $(NAME): is_liba $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 was_liba:
+	touch $(OBJS)
 	touch was_liba
 
 is_libso: was_liba
