@@ -339,7 +339,7 @@ int		main(int ac, char **av)
 		char	*str = "blablabla";
 		char	*ret_str;
 
-		printf("calling with (size_t)-10 : %zd\n");
+		printf("calling with (size_t)-10 : %zd\n", (size_t)-10);
 		ret_str = ft_strsub(str, 0, (size_t)-10);
 		if (ret_str)
 			printf("returned string is : %s\n", ret_str);
