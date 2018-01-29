@@ -12,7 +12,7 @@ install:
  - echo 'install done'
 
 script :
- - make test TF=ISALNUM #&& make unit_tests
+ - make test TF=NO_TEST #&& make unit_tests
  - make libft
  - ~/42FileChecker/42FileChecker.sh 
    --project "libft" 
