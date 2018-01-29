@@ -34,7 +34,7 @@ SO_STAMPS = was_libso is_libso
 all: $(NAME)
 
 was_libso:
-	touch $(OBJS)
+	touch $(patsubst %.o, %.c, $(OBJS))
 	touch was_libso
 	$(eval GCCFLAGS := -Wall -Wextra -Werror)
 
@@ -45,7 +45,7 @@ $(NAME): is_liba $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 was_liba:
-	touch $(OBJS)
+	touch $(patsubst %.o, %.c, $(OBJS))
 	touch was_liba
 	$(eval GCCFLAGS += -fPIC -shared)
 
