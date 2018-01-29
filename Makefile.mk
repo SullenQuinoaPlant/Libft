@@ -39,7 +39,7 @@ was_libso:
 is_liba: was_libso
 	$(eval GCCFLAGS := -Wall -Wextra -Werror)
 
-$(NAME): is_liba a_flags $(OBJS)
+$(NAME): is_liba $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 	touch $(A_STAMPS)
 
@@ -49,7 +49,7 @@ was_liba:
 is_libso: was_liba
 	$(eval GCCFLAGS += -fPIC -shared)
 
-so: is_libso so_flags $(OBJS)
+so: is_libso $(OBJS)
 	gcc $(GCCFLAGS) -o $(SO_NAME) $(OBJS)
 	touch $(SO_STAMPS)
 
