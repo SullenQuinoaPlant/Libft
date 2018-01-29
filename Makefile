@@ -12,7 +12,7 @@
 
 include Makefile.mk
 
-TF = 
+TF = NO_TEST
 
 test: all
 	gcc $(GCCFLAGS) -D "$(TF)=1" -o tf.exe test_main.c $(NAME)
