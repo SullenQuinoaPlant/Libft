@@ -36,9 +36,9 @@ all: $(NAME)
 was_libso:
 	touch $(OBJS)
 	touch was_libso
+	$(eval GCCFLAGS := -Wall -Wextra -Werror)
 
 is_liba: was_libso
-	$(eval GCCFLAGS := -Wall -Wextra -Werror)
 
 $(NAME): is_liba $(OBJS)
 	touch $(A_STAMPS)
@@ -47,9 +47,9 @@ $(NAME): is_liba $(OBJS)
 was_liba:
 	touch $(OBJS)
 	touch was_liba
+	$(eval GCCFLAGS += -fPIC -shared)
 
 is_libso: was_liba
-	$(eval GCCFLAGS += -fPIC -shared)
 
 so: is_libso $(OBJS)
 	touch $(SO_STAMPS)
