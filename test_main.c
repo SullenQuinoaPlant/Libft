@@ -334,6 +334,16 @@ int		main(int ac, char **av)
 		s = ft_strsub(av[1], atoi(av[2]), atoi(av[3]));
 		printf("\nreturned string is: %s", s);
 	}
+	else
+	{
+		char	*str = "blablabla";
+
+		printf("calling with (size_t)-10 : %zd\n");
+		ret_str = ft_strsub(str, 0, (size_t)-10);
+		if (ret_str)
+			printf("returned string is : %s\n", ret_str);
+		free(ret_str);
+	}
 #elif MEMALLOC
 	if (ac == 2)
 	{
