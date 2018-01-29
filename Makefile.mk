@@ -46,7 +46,7 @@ $(NAME): is_liba set_flags_a $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 	touch $(A_STAMPS)
 
-is_libso: si_liba
+is_libso: is_liba
 	touch $(patsubst %.o, %.c, $(OBJS))
 
 was_libso:
