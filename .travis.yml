@@ -5,8 +5,6 @@ language : c
 before_install :
  - git clone https://github.com/jgigault/42FileChecker ~/42FileChecker
  - chmod a+x ~/42FileChecker/42FileChecker.sh
- - sudo apt-get -qq update
- - sudo apt-get install libbsd-dev
 
 script :
  - make
