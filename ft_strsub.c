@@ -20,7 +20,7 @@ static int	check_input(char const *s, unsigned int start, size_t const len)
 
 	new_len = ft_strlen(s);
 	new_len -= start < new_len ? start : new_len;
-	new_len = len < new_len ? len : new_len;
+	new_len = len <= new_len ? len : 0;
 	return (new_len);
 }
 

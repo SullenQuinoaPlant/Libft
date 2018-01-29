@@ -39,10 +39,8 @@ was_libso:
 is_liba: was_libso
 	touch $(patsubst %.o, %.c, $(OBJS))
 
-set_flags_a:
+$(NAME): is_liba $(OBJS)
 	$(eval GCCFLAGS := -Wall -Wextra -Werror)
-
-$(NAME): is_liba $(OBJS) | set_flags_a 
 	ar rcs $(NAME) $(OBJS)
 	touch $(A_STAMPS)
 
@@ -52,11 +50,9 @@ was_liba:
 is_libso: was_liba
 	touch $(patsubst %.o, %.c, $(OBJS))
 
-set_flags_so:
-	$(eval GCCFLAGS += -fPIC -shared)
 
-so: is_libso $(OBJS) | set_flags_so 
-#	ld -o libft.so $(OBJS) -lc
+so: is_libso $(OBJS)
+	$(eval GCCFLAGS += -fPIC -shared)
 	gcc $(GCCFLAGS) -o $(SO_NAME) $(OBJS)
 	touch $(SO_STAMPS)
 
