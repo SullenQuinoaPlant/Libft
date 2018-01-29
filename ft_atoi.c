@@ -32,16 +32,16 @@ static int	here_build_res(unsigned long *comp, unsigned long *res,\
 	*res = *comp;
 	save = *res;
 	*comp = *res << 1;
-	fail = *comp > *ref || *comp < *res ? 1 : 0;
+	fail = *comp > *ref || *comp < *res ? 1 : fail;
 	*res = *comp;
 	*comp = *comp << 1;
-	fail = *comp > *ref || *comp < *res ? 1 : 0;
+	fail = *comp > *ref || *comp < *res ? 1 : fail;
 	*res = *comp;
 	*comp = *comp + save;
-	fail = *comp > *ref || *comp < *res ? 1 : 0;
+	fail = *comp > *ref || *comp < *res ? 1 : fail;
 	*res = *comp;
 	*comp = *comp + (*(*nptr)++ - '0');
-	fail = *comp > *ref || *comp < *res ? 1 : 0;
+	fail = *comp > *ref || *comp < *res ? 1 : fail;
 	*res = *comp;
 	return (fail);
 }

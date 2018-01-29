@@ -33,6 +33,8 @@ SO_STAMPS = was_libso is_libso
 
 all: $(NAME)
 
+was_libso:
+
 is_liba: was_libso
 	touch $(patsubst %.o, %.c, $(OBJS))
 
@@ -43,7 +45,9 @@ $(NAME): is_liba set_flags_a $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 	touch $(A_STAMPS)
 
-is_libso: is_liba
+was_liba:
+
+is_libso: was_liba
 	touch $(patsubst %.o, %.c, $(OBJS))
 
 set_flags_so:
