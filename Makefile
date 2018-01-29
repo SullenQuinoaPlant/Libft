@@ -17,4 +17,13 @@ TF =
 test: all
 	gcc $(GCCFLAGS) -D "TF=$(TF)" -o tf.exe test_main.c $(NAME)
 
+libft:
+	cp ft_*.c libft/
+	cp auteur libft/
+	cp Makefile.mk libft/Makefile
+	cp libft.h libft/
+
+unit_tests: libft
+	make -C ./libft-unit-tests/
+
 .PHONY: test
