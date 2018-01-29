@@ -14,6 +14,7 @@ install:
 script :
  - make
  - make
+ - make re
  - make test TF=STRSUB #&& make unit_tests
  - make libft
  - ~/42FileChecker/42FileChecker.sh 
