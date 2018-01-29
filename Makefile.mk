@@ -60,7 +60,7 @@ clean:
 	-rm *.o
 
 fclean: clean
-	-rm $(NAME)
+	-rm $(NAME) $(SO_NAME)
 	-rm $(SO_STAMPS) $(A_STAMPS)
 	-rm $(SO_NAME)
 

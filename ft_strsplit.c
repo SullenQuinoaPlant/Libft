@@ -57,6 +57,8 @@ char			**ft_strsplit(char const *s, char c)
 	size_t	count;
 	char	**ar;
 
+	if (!s)
+		return (0);
 	count = count_strings(s, c);
 	if ((ar = malloc(++count * sizeof(char*))))
 		fill_splits_ar(ar, s, c);

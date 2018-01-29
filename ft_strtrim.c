@@ -17,6 +17,8 @@ char	*ft_strtrim(char const *s)
 	char	*ss;
 	size_t	l;
 
+	if (!s)
+		return (s);
 	while (!(*s ^ ' ' && *s ^ '\t' && *s ^ '\n'))
 		s++;
 	l = 0;
