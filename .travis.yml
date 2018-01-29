@@ -5,7 +5,9 @@ os :
  - osx
 
 install:
+ - echo installing
  - source .travis/install.sh
+ - echo 'install done'
 
 script :
  - make test TF=NO_TEST && make unit_tests
