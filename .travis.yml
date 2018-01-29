@@ -7,7 +7,7 @@ before_install :
  - chmod a+x ~/42FileChecker/42FileChecker.sh
 
 script :
- - make test TF=NO_TEST && make unit tests
+ - make test TF=NO_TEST && make unit_tests
  - ~/42FileChecker/42FileChecker.sh --project "libft" --path "$(pwd)"
  - cat ~/42FileChecker/.mymoulitest
  - cat ~/42FileChecker/.mylibftunittest

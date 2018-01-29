@@ -56,6 +56,19 @@ int		main(int ac, char **av)
 				   		ft_isalpha(i));
 		i++;
 	}
+#elif ISALNUM
+	int		i;
+	i = -1;
+	while (i < 530)
+	{
+		if (!!ft_isalnum(i) != !!isalnum(i))
+			printf("/nisulnum failed on: %d,\
+					ft_isalnum : %d,\
+					isalnum : %d,\
+					!!ft_isalnum: %d,\
+					!!isalnum: %d\n", i, ft_isalnum(i), isalnum(i), !!ft_isalnum(i), !!isalnum(i));
+		i++;
+	}
 #elif ITOA
 	if (ac == 2)
 	{
