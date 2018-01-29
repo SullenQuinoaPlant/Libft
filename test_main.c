@@ -22,7 +22,7 @@ int		main(int ac, char **av)
 
 #ifndef TF
 	printf("no function selection was made");
-#elif TF == ATOI
+#elif ATOI
 	if (ac == 2)
 	{
 		printf("atoi is : %d\n", atoi(av[1]));
@@ -45,7 +45,7 @@ int		main(int ac, char **av)
 		printf("atoi is : %d\n", atoi(str));
 		printf("\nft_atoi is :%d", ft_atoi(str));
 	}
-#elif TF == ISALPHA
+#elif ISALPHA
 	int		i;
 
 	i = -300;
@@ -56,7 +56,7 @@ int		main(int ac, char **av)
 				   		ft_isalpha(i));
 		i++;
 	}
-#elif TF == ITOA
+#elif ITOA
 	if (ac == 2)
 	{
 		int	i;
@@ -69,7 +69,7 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("test of ft_itoa requires exactly one arument");
-#elif TF == LSTDEL
+#elif LSTDEL
 	void	del(void *content, size_t size)
 	{
 		(void)size;
@@ -136,7 +136,7 @@ int		main(int ac, char **av)
 	}
 //	delthis(&a);
 //	stupiddel(&a);
-#elif TF == MEMCMP
+#elif MEMCMP
 	int		ft_ret;
 	int		ret;
 
@@ -158,7 +158,7 @@ int		main(int ac, char **av)
 			printf("\nyou fucked up");
 		}
 	}
-#elif TF == MEMCPY
+#elif MEMCPY
 	if (ac == 2)
 	{
 		char    *dest;
@@ -178,7 +178,7 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("ft_memcpy test requires exactly one argument");
-#elif TF == PUTNBR
+#elif PUTNBR
 	if (ac == 2)
 	{
 		int	t;
@@ -187,7 +187,7 @@ int		main(int ac, char **av)
 		printf("printf gives : %d\t and putnbr gives: ", t);
 		ft_putnbr(t);
 	}
-#elif TF == STRNEQU
+#elif STRNEQU
 	if (ac == 4)
 	{
 		printf("\nreturn value of ft_strnequ(a1, a2) is : %d",\
@@ -196,7 +196,7 @@ int		main(int ac, char **av)
 	else
 		printf("ft_strnequ test requires exactly three arguments:\
 			string1, string2 and number of bytes to compare");
-#elif TF == STREQU
+#elif STREQU
 	if (ac == 3)
 	{
 		printf("\nreturn value of ft_strequ(a1, a2) is : %d",\
@@ -204,7 +204,7 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("ft_strequ test requires exactly two strings as arguments");
-#elif TF == STRITER
+#elif STRITER
 	if (ac == 2)
 	{
 		void	here_f(char *c)
@@ -216,7 +216,7 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("test of ft_striter requires exactly one argument");
-#elif TF == STRITERI
+#elif STRITERI
 	if (ac == 2)
 	{
 		void	here_f(unsigned int i, char *c)
@@ -228,7 +228,7 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("test of ft_striteri requires exactly one argument");
-#elif TF == STRJOIN
+#elif STRJOIN
 	if(ac == 3)
 	{
 		char	*s;
@@ -236,7 +236,7 @@ int		main(int ac, char **av)
 		s = ft_strjoin(av[1], av[2]);
 		printf("\nresult of ft_strjoin(av[1], av[2]) is : %s", s);
 	}
-#elif TF == STRMAP
+#elif STRMAP
 	if (ac == 2)
 	{
 //		char	*s;
@@ -250,7 +250,7 @@ int		main(int ac, char **av)
 //	}
 //	else
 //		printf("test of ft_strmap requires exactly one argument");
-#elif TF == STRNCMP
+#elif STRNCMP
 	int		ft_ret;
 	int		ret;
 
@@ -271,7 +271,7 @@ int		main(int ac, char **av)
 			printf("\nyou fucked up");
 		}
 	}
-#elif TF == STRNCPY
+#elif STRNCPY
 	if (ac == 3)
 	{
 		char	*src = "--> nyancat <--\n\r";
@@ -313,7 +313,7 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("\nstrncpy test requires exactly 2 arguments");
-#elif TF == STRSUB
+#elif STRSUB
 	if (ac == 4)
 	{
 		char	*s;
@@ -321,7 +321,7 @@ int		main(int ac, char **av)
 		s = ft_strsub(av[1], atoi(av[2]), atoi(av[3]));
 		printf("\nreturned string is: %s", s);
 	}
-#elif TF == MEMALLOC
+#elif MEMALLOC
 	if (ac == 2)
 	{
 		void	*new_buff;
@@ -339,7 +339,7 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("memalloc test requires one numeric argument");
-#elif TF == STRRCHR
+#elif STRRCHR
 	if (ac == 3)
 	{
 		printf("\nargument 1 is: %s\nargument 2 is: %c", av[1], av[2][0]);
@@ -349,7 +349,7 @@ int		main(int ac, char **av)
 	else
 		printf("ft_strrchr test requires exactly 2 arguments");
 	return (0);
-#elif TF == STRSPLIT
+#elif STRSPLIT
 	if (ac == 3)
 	{
 		char	**splits;
@@ -362,7 +362,7 @@ int		main(int ac, char **av)
 	}
 	else
 		printf("\nft_strsplit test requires exactly two arguments.");
-#elif TF == STRTRIM
+#elif STRTRIM
 	char	*ret_str;
 
 	if (ac == 2)

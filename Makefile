@@ -12,10 +12,10 @@
 
 include Makefile.mk
 
-TF =
+TF = 
 
 test: all
-	gcc $(GCCFLAGS) -D "TF=$(TF)" -o tf.exe test_main.c $(NAME)
+	gcc $(GCCFLAGS) -D "$(TF)=1" -o tf.exe test_main.c $(NAME)
 
 libft:
 	cp ft_*.c libft/
