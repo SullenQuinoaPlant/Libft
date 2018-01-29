@@ -337,6 +337,7 @@ int		main(int ac, char **av)
 	else
 	{
 		char	*str = "blablabla";
+		char	*ret_str;
 
 		printf("calling with (size_t)-10 : %zd\n");
 		ret_str = ft_strsub(str, 0, (size_t)-10);
