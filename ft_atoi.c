@@ -23,10 +23,10 @@ static void	here_init(const char **nptr, unsigned long *ref,\
 	i = sizeof(unsigned long) * 8 - 1;
 	printf("i is : %zd\n", i);
 	a = 1;
-	printf("a is : %llu\n", a);
+	printf("a is : %lu\n", a);
 	while (i--)
 			a <<= 1;
-	printf("a is : %llu\n", a);
+	printf("a is : %lu\n", a);
 	*ref = a;
 	*ref = 0x1 << (sizeof(unsigned long) * 8 - 1);
 	*ref -= **nptr == '-' ? 0 : 1;
