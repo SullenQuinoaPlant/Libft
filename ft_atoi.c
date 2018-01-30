@@ -60,5 +60,5 @@ int			ft_atoi(const char *nptr)
 		fail = here_build_res(&comp, &res, &ref, &nptr);
 	if (fail)
 		return ((int)(ref));
-	return ((int)(ref & 01 ? (~res) + 1 : res));
+	return ((int)((char)ref & 0xFF ? (~res) + 1 : res));
 }
