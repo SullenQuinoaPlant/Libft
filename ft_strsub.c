@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 07:00:57 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/01/28 08:15:42 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/01/30 05:14:30 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	check_input(char const *s, unsigned int start, size_t const *len)
 	return (1);
 }
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*ss;
 

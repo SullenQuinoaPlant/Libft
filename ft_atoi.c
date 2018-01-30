@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 08:31:14 by nmauvari          #+#    #+#             */
-/*   Updated: 2017/12/15 08:20:38 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/01/30 05:14:48 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@ static void	here_init(const char **nptr, unsigned long *ref,\
 {
 	while (!((**nptr ^ ' ') && ((**nptr < '\t') || (**nptr > '\r'))))
 		(*nptr)++;
-	
 	*ref = 0x1ul << (sizeof(unsigned long) * 8 - 1);
 	*ref -= **nptr == '-' ? 0 : 1;
 	**nptr == '-' || **nptr == '+' ? (*nptr)++ : (*nptr);
