@@ -14,9 +14,17 @@ include Makefile.mk
 
 TF = NO_TEST
 
+.PHONY: test libft
 test: all
 	gcc $(GCCFLAGS) -D "$(TF)=1" -o tf.exe test_main.c $(NAME)
 	./tf.exe
+
+libft:
+	mkdir $@/
+	cp ft_*.c $@/
+	cp auteur $@/
+	cp Makefile.mk $@/
+	cp libft.h $@/
 
 the_lib:
 	-rm -rf $@/
@@ -38,4 +46,3 @@ the_lib:
 unit_tests: libft
 	make -C ./libft-unit-tests/ f
 
-.PHONY: test libft
