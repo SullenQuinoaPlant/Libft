@@ -23,7 +23,7 @@ libft:
 	mkdir $@/
 	cp ft_*.c $@/
 	cp auteur $@/
-	cp Makefile.mk $@/
+	cp Makefile.mk $@/Makefile
 	cp libft.h $@/
 
 the_lib:
