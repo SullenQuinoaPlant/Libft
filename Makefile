@@ -23,6 +23,7 @@ the_lib:
 	git clone\
 		--single-branch --depth 1\
 		-b the_lib\
+		https://github.com/SullenQuinoaPlant/Libft.git\
 		$@/
 	git rm $@/*
 	cp ft_*.c $@/
