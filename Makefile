@@ -25,7 +25,7 @@ the_lib:
 		-b the_lib\
 		https://github.com/SullenQuinoaPlant/Libft.git\
 		$@/
-	git rm $@/*
+	rm $@/*
 	cp ft_*.c $@/
 	cp auteur $@/
 	cp Makefile.mk $@/
