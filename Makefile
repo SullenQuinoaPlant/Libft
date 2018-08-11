@@ -18,11 +18,21 @@ test: all
 	gcc $(GCCFLAGS) -D "$(TF)=1" -o tf.exe test_main.c $(NAME)
 	./tf.exe
 
-libft:
-	cp ft_*.c libft
-	cp auteur libft
-	cp Makefile.mk libft/Makefile
-	cp libft.h libft
+the_lib:
+	-rm -rf $@/
+	git clone\
+		--single-branch --depth 1\
+		-b the_lib\
+		$@/
+	git rm $@/*
+	cp ft_*.c $@/
+	cp auteur $@/
+	cp Makefile.mk $@/
+	cp libft.h $@/
+	cd $@ &&\
+		git add * &&\
+		git commit -a -m the_lib &&\
+		git push
 
 unit_tests: libft
 	make -C ./libft-unit-tests/ f
