@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoierr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/27 04:58:32 by nmauvari          #+#    #+#             */
+/*   Updated: 2018/08/27 04:59:53 by nmauvari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 static void	here_init(const char **nptr, unsigned long *ref,\
 					unsigned long *res, int *fail)
 {
@@ -35,7 +47,7 @@ static int	here_build_res(unsigned long *comp, unsigned long *res,\
 	return (fail);
 }
 
-int		ft_atoierr(const char *nptr,
+int			ft_atoierr(const char *nptr,
 			int *res, char **ret_p)
 {
 	unsigned long		res;
