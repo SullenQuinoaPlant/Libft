@@ -6,7 +6,7 @@
 #    By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/28 06:51:47 by nmauvari          #+#    #+#              #
-#    Updated: 2018/01/28 06:56:28 by nmauvari         ###   ########.fr        #
+#    Updated: 2018/08/27 05:05:16 by nmauvari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ the_lib:
 	rm $@/*
 	cp ft_*.c $@/
 	cp auteur $@/
-	cp Makefile.mk $@/
+	cp Makefile.mk $@/Makefile
 	cp libft.h $@/
 	cd $@ &&\
 		git add * &&\
