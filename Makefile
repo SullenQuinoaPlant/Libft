@@ -6,7 +6,7 @@
 #    By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/28 06:51:47 by nmauvari          #+#    #+#              #
-#    Updated: 2018/09/01 05:11:22 by nmauvari         ###   ########.fr        #
+#    Updated: 2018/09/01 05:15:00 by nmauvari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,3 +48,6 @@ the_lib:
 unit_tests: libft
 	make -C ./libft-unit-tests/ f
 
+.PHONY : c
+c :
+	git commit -a -m i
