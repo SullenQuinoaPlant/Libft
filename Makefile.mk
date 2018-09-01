@@ -6,7 +6,7 @@
 #    By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 07:09:48 by nmauvari          #+#    #+#              #
-#    Updated: 2018/09/01 05:13:22 by nmauvari         ###   ########.fr        #
+#    Updated: 2018/09/01 05:22:05 by nmauvari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,10 +35,10 @@ TARGETS += $(TARGETS_EXTENSION)
 SRCS := $(patsubst %,%.c,$(TARGETS))
 OBJS := $(patsubst %,%.o,$(TARGETS))
 
-CFLAGS :=
 DEFFLAGS := -Wall -Wextra -Werror\
 	-I includes/
 SOFLAGS := -fPIC -shared
+CFLAGS := $(DEFFLAGS)
 
 
 A_STAMPS = was_liba is_liba
@@ -70,7 +70,7 @@ so: is_libso $(OBJS)
 	gcc $(CFLAGS) -o $(SO_NAME) $(OBJS)
 
 %.o: sources/%.c
-	@gcc -c $(CFLAGS) $<
+	gcc -c $(CFLAGS) $<
 
 clean:
 	-rm *.o

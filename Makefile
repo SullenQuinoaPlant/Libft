@@ -6,7 +6,7 @@
 #    By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/28 06:51:47 by nmauvari          #+#    #+#              #
-#    Updated: 2018/09/01 05:15:00 by nmauvari         ###   ########.fr        #
+#    Updated: 2018/09/01 05:26:41 by nmauvari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,10 +34,8 @@ the_lib:
 		https://github.com/SullenQuinoaPlant/Libft.git\
 		$@/
 	rm -rf $@/*
-	mkdir $@/sources
-	cp $(SRCS) $@/sources/
-	mkdir $@/includes
-	cp libft.h $@/includes/
+	cp -r sources/ $@/sources
+	cp -r includes/ $@/includes
 	cp auteur $@/
 	cp Makefile.mk $@/Makefile
 	cd $@ &&\
