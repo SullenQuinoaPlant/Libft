@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 09:43:54 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/01/28 06:46:19 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/01 05:39:50 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,22 +132,22 @@ int		main(int ac, char **av)
 	printf("\n starting to delete\r");
 	printf("\n address stored at head is :%lu", (unsigned long)head);
 	printf("\n address stored at a is :%lu\n", (unsigned long)a);
-	delthis(&head, &del);
-	delthis(&a, &del);
+	ft_lstdel(&head, &del);
+	ft_lstdel(&a, &del);
 //	ft_lstdel(&head, &del);
 	printf("\n address stored at head is :%lu", (unsigned long)head);
 	printf("\n address stored at a is :%lu\n", (unsigned long)a);
 	free(a);
 	printf("\n address stored at a is :%lu\n", (unsigned long)a);
 //	ft_lstdel(&head, &del);
-//	delthis(&head);
-//	delthis(&head);
+//	ft_lstdel(&head);
+//	ft_lstdel(&head);
 //	free(a);
 	void	stupiddel(t_list **delthis)
 	{
 		free(*delthis);
 	}
-//	delthis(&a);
+//	ft_lstdel(&a);
 //	stupiddel(&a);
 #elif MEMCMP
 	int		ft_ret;
