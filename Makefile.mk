@@ -6,7 +6,7 @@
 #    By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 07:09:48 by nmauvari          #+#    #+#              #
-#    Updated: 2018/09/01 04:02:26 by nmauvari         ###   ########.fr        #
+#    Updated: 2018/09/01 05:13:22 by nmauvari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,13 +30,14 @@ TARGETS :=\
 TARGETS_EXTENSION :=\
 	ft_atoierr ft_cleanfree
 
-TARGETS += TARGETS_EXTENSION
+TARGETS += $(TARGETS_EXTENSION)
 
 SRCS := $(patsubst %,%.c,$(TARGETS))
 OBJS := $(patsubst %,%.o,$(TARGETS))
 
 CFLAGS :=
-DEFFLAGS := -Wall -Wextra -Werror
+DEFFLAGS := -Wall -Wextra -Werror\
+	-I includes/
 SOFLAGS := -fPIC -shared
 
 
@@ -68,7 +69,7 @@ so: is_libso $(OBJS)
 	touch $(SO_STAMPS)
 	gcc $(CFLAGS) -o $(SO_NAME) $(OBJS)
 
-%.o: %.c
+%.o: sources/%.c
 	@gcc -c $(CFLAGS) $<
 
 clean:
