@@ -1,48 +1,29 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/01/28 06:51:47 by nmauvari          #+#    #+#              #
-#    Updated: 2018/08/27 05:05:16 by nmauvari         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
+include make_vars.mk
 include core.mk
+include $(SRC_DIR)/Makefile
+include $(TEST_DIR)/Makefile
 
-TF = NO_TEST
 
-.PHONY: test libft
-test: all
-	gcc $(GCCFLAGS) -D "$(TF)=1" -o tf.exe test_main.c $(NAME)
-	./tf.exe
-
-libft:
-	mkdir $@/
-	cp ft_*.c $@/
+define PROJECT_FILES
+	mkdir $@/sources
+	cp $(SOURCES) $@/sources/
+	mkdir $@/includes
+	cp $(SRC_DIR)/*.h $@/includes/
 	cp auteur $@/
-	cp Makefile.mk $@/Makefile
-	cp libft.h $@/
+	cp project.mk $@/Makefile
+enddef
 
-the_lib:
+.PHONY : project
+project :
 	-rm -rf $@/
 	git clone\
 		--single-branch --depth 1\
-		-b the_lib\
+		-b project\
 		https://github.com/SullenQuinoaPlant/Libft.git\
 		$@/
-	rm $@/*
-	cp ft_*.c $@/
-	cp auteur $@/
-	cp Makefile.mk $@/Makefile
-	cp libft.h $@/
+	rm -r $@/*
+	$(PROJECT_FILES)
 	cd $@ &&\
 		git add * &&\
-		git commit -a -m the_lib &&\
+		git commit -a -m project &&\
 		git push
-
-unit_tests: libft
-	make -C ./libft-unit-tests/ f
-
