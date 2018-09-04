@@ -1,6 +1,6 @@
 ifndef ROOT
 	ROOT = ..
-	include $(ROOT)\Makefile
+	include $(ROOT)/Makefile
 endif
 
 TF = NO_TEST
