@@ -4,8 +4,6 @@ os :
 # - linux
  - osx
 
-sudo : required
-
 install:
  - echo installing
  - source ./.travis/install.sh

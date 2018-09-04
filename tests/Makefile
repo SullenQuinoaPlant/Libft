@@ -7,6 +7,7 @@ TF = NO_TEST
 .PHONY: test
 test: all
 	gcc $(GCCFLAGS)\
+		-I $(SRC_DIR)\
 		-D "$(TF)=1"\
  		$(TEST_DIR)/test_main.c\
 		$(A_NAME)\
