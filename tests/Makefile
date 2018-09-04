@@ -19,7 +19,7 @@ test-libft : $(TEST_DIR)/libft
 $(TEST_DIR)/libft:
 	mkdir $@/
 	cp $(ROOT)/*.mk $@/
-	cp $(SRC_DIR) $@/
+	cp -r  $(SRC_DIR) $@/
 
 .PHONY : unit_tests
 unit_tests:
