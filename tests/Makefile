@@ -20,7 +20,7 @@ $(TEST_DIR)/test-libft:
 	mkdir $@/
 	cp $(ROOT)/Makefile $@/
 	cp $(ROOT)/targets.mk $@/Makefile
-	cat $(ROOT)/make_vars.mk >> $@/Makefile
+	cp $(ROOT)/make_vars.mk $@/Makefile
 	cat $(ROOT)/core.mk >> $@/Makefile
 	cp -r  $(SRC_DIR) $@/
 
