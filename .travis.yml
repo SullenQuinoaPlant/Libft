@@ -14,10 +14,10 @@ script :
  - make
  - make re
  - make test TF=STRSUB #&& make unit_tests
- - make libft
+ - make test-libft
  - ~/42FileChecker/42FileChecker.sh 
    --project "libft" 
-   --path "$(pwd)/libft"
+   --path "$(pwd)/tests/test-libft/"
    --no-norminette
  - cat ~/42FileChecker/.mymakefile
  - cat ~/42FileChecker/.mymoulitest
