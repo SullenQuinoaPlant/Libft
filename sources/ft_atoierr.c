@@ -63,6 +63,6 @@ int			ft_atoierr(const char *nptr,
 	else
 		*ret_res = (int)(ref & 01 ? res : (~res) + 1);
 	if (ret_p)
-		*ret_p = nptr;
+		*ret_p = (char*)nptr;
 	return (fail);
 }
