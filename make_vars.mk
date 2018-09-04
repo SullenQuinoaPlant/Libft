@@ -8,11 +8,11 @@ NAME = libft
 A_NAME = $(NAME).a
 SO_NAME = $(NAME).so
 
-SOURCES := $(patsubst %,$(SRC_DIR)/%.c,$(TARGETS))
-OBJS := $(patsubst %.c,%.o,$(SOURCES))
+SRCS = $(patsubst %,$(SRC_DIR)/%.c,$(TARGETS))
+OBJS = $(patsubst %.c,%.o,$(SRCS))
 
-TEST_DIR = $(ROOT)/tests
-SRC_DIR = $(ROOT)/sources
-OBJ_DIR = $(ROOT)/objects
+TEST_DIR := $(ROOT)/tests
+SRC_DIR := $(ROOT)/sources
+OBJ_DIR := $(ROOT)/objects
 
 GCCFLAGS := -Wall -Wextra -Werror

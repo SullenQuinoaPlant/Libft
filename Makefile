@@ -6,7 +6,7 @@ include $(TEST_DIR)/Makefile
 
 define PROJECT_FILES
 	mkdir $@/sources
-	cp $(SOURCES) $@/sources/
+	cp $(SRCS) $@/sources/
 	mkdir $@/includes
 	cp $(SRC_DIR)/*.h $@/includes/
 	cp auteur $@/
