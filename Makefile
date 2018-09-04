@@ -1,7 +1,7 @@
-include make_vars.mk
-include core.mk
-include $(SRC_DIR)/Makefile
-include $(TEST_DIR)/Makefile
+include  $(ROOT)/make_vars.mk
+include  $(ROOT)/core.mk
+include  $(ROOT)/$(SRC_DIR)/Makefile
+include  $(ROOT)/$(TEST_DIR)/Makefile
 
 
 define PROJECT_FILES
