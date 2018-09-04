@@ -16,8 +16,9 @@ test: all
 .PHONY : test-libft
 test-libft : $(TEST_DIR)/libft
 
-$(TEST_DIR)/libft:
+$(TEST_DIR)/test-libft:
 	mkdir $@/
+	cp $(ROOT)/Makefile $@/
 	cp $(ROOT)/*.mk $@/
 	cp -r  $(SRC_DIR) $@/
 
