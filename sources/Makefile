@@ -7,6 +7,7 @@ endif
 targets : clean-targets $(ROOT)/targets.mk
 
 .PHONY : clean-targets
+clean-targets :
 	-rm $(ROOT)/targets.mk
 
 $(ROOT)/targets.mk :
