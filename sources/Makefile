@@ -10,6 +10,7 @@ targets : clean-targets $(ROOT)/targets.mk
 clean-targets :
 	-rm $(ROOT)/targets.mk
 
+.PHONY : $(ROOT)/targets.mk 
 $(ROOT)/targets.mk :
 	echo "TARGETS :=\\" > $@
 	@ls $(SRC_DIR)/*.c \
