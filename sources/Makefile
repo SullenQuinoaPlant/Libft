@@ -4,10 +4,12 @@ ifndef ROOT
 endif
 
 .PHONY : targets
-targets : $(ROOT)/targets.mk
+targets : clean-targets $(ROOT)/targets.mk
+
+.PHONY : clean-targets
+	-rm $(ROOT)/targets.mk
 
 $(ROOT)/targets.mk :
-	-rm $@
 	echo "TARGETS :=\\" > $@
 	@ls $(SRC_DIR)/*.c \
 	|sed 's@.*/\([a-z0-9][a-z0-9_]*\)\.c@\t\1 \\@' \
