@@ -1,3 +1,7 @@
+ifndef ROOT
+	ROOT = .
+endif
+
 include  $(ROOT)/make_vars.mk
 include  $(ROOT)/core.mk
 include  $(ROOT)/$(SRC_DIR)/Makefile
