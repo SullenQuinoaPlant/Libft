@@ -4,11 +4,7 @@ ifndef ROOT
 endif
 
 .PHONY : targets
-targets : clean-targets $(ROOT)/targets.mk
-
-.PHONY : clean-targets
-clean-targets :
-	-rm $(ROOT)/targets.mk
+targets : $(ROOT)/targets.mk
 
 .PHONY : $(ROOT)/targets.mk 
 $(ROOT)/targets.mk :
