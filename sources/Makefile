@@ -13,3 +13,4 @@ $(ROOT)/targets.mk :
 	|sed 's@.*/\([a-z0-9][a-z0-9_]*\)\.c@\t\1 \\@' \
 	|sed '$$s@\(.*\) \\@\1@' >> $@
 	$(eval include $(SRC_DIR)/targets.mk)
+	echo "sources are : $(SRCS)"
