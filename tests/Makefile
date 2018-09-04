@@ -13,6 +13,9 @@ test: all
 		-o $(TEST_DIR)/tf.exe
 	./$(TEST_DIR)/tf.exe
 
+.PHONY : test-libft
+test-libft : $(TEST_DIR)/libft
+
 $(TEST_DIR)/libft:
 	mkdir $@/
 	cp $(ROOT)/*.mk $@/
