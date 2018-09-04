@@ -14,7 +14,7 @@ test: all
 	./$(TEST_DIR)/tf.exe
 
 .PHONY : test-libft
-test-libft : $(TEST_DIR)/libft
+test-libft : $(TEST_DIR)/test-libft
 
 $(TEST_DIR)/test-libft:
 	mkdir $@/
