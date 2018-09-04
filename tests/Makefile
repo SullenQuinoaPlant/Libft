@@ -15,7 +15,8 @@ test: all
 
 $(TEST_DIR)/libft:
 	mkdir $@/
-	$(PROJECT_FILES)
+	cp $(ROOT)/*.mk $@/
+	cp $(SRC_DIR) $@/
 
 .PHONY : unit_tests
 unit_tests:

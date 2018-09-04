@@ -1,5 +1,5 @@
 .PHONY : all
-all: targets $(A_NAME)
+all: $(A_NAME)
 
 was_libso:
 	touch was_libso
@@ -10,7 +10,7 @@ is_liba: was_libso
 
 $(A_NAME): is_liba $(OBJS)
 	touch $(A_STAMPS)
-	ar rcs $(NAME) $(OBJS)
+	ar rcs $(A_NAME) $(OBJS)
 
 was_liba:
 	touch was_liba

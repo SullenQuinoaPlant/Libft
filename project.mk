@@ -1,3 +1,4 @@
+NAME = libft
 OBJ_DIR = ./sources
 OBJS := $(patsubst %,$(OBJ_DIR)/%.o,$(TARGETS))
 
@@ -10,7 +11,7 @@ $(NAME).a: $(OBJS)
 	ar rcs $@ $^
 
 %.o: %.c
-	@gcc -c $(GCCFLAGS) $<
+	@gcc -c $(GCCFLAGS) $< -o $@
 
 .PHONY : clean
 clean:
