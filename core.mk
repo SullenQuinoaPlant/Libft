@@ -25,7 +25,7 @@ so: is_libso $(OBJS)
 	gcc $(GCCFLAGS) -o $(SO_NAME) $(OBJS)
 
 %.o: %.c
-	@gcc -c $(GCCFLAGS) $<
+	@gcc -c $(GCCFLAGS) $< -o $@
 
 
 .PHONY : clean
