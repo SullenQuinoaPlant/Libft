@@ -16,3 +16,6 @@ SRC_DIR := $(ROOT)/sources
 OBJ_DIR := $(ROOT)/objects
 
 GCCFLAGS := -Wall -Wextra -Werror
+
+A_STAMPS = was_liba is_liba
+SO_STAMPS = was_libso is_libso
