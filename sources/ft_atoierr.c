@@ -48,7 +48,7 @@ static int	here_build_res(unsigned long *comp, unsigned long *res,\
 }
 
 int			ft_atoierr(const char *nptr,
-			int *res, char **ret_p)
+			int *ret_res, char **ret_p)
 {
 	unsigned long		res;
 	unsigned long		ref;
@@ -59,9 +59,9 @@ int			ft_atoierr(const char *nptr,
 	while (!fail && *nptr >= '0' && *nptr <= '9')
 		fail = here_build_res(&comp, &res, &ref, &nptr);
 	if (fail)
-		*res = (int)ref;
+		*ret_res = (int)ref;
 	else
-		*res = (int)(ref & 01 ? res : (~res) + 1);
+		*ret_res = (int)(ref & 01 ? res : (~res) + 1);
 	if (ret_p)
 		*ret_p = nptr;
 	return (fail);
