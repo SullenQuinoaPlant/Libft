@@ -25,5 +25,5 @@ $(TEST_DIR)/test-libft:
 	cp -r  $(SRC_DIR) $@/
 
 .PHONY : unit_tests
-unit_tests:
+unit_tests: test-libft
 	make -C ./libft-unit-tests/ f
