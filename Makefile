@@ -11,7 +11,7 @@ define PROJECT_FILES
 	cp $(SRC_DIR)/*.h $@/includes/
 	cp auteur $@/
 	cp project.mk $@/Makefile
-enddef
+endef
 
 .PHONY : project
 project :
