@@ -1,5 +1,5 @@
 .PHONY : all
-all: $(A_NAME)
+all: $(ROOT)/$(A_NAME)
 
 was_libso:
 	touch was_libso
@@ -8,7 +8,7 @@ is_liba: was_libso
 	touch $(SRCS)
 	$(eval GCCFLAGS := -Wall -Wextra -Werror)
 
-$(A_NAME): is_liba $(OBJS)
+$(ROOT)/$(A_NAME): is_liba $(OBJS)
 	touch $(A_STAMPS)
 	ar rcs $(A_NAME) $(OBJS)
 
