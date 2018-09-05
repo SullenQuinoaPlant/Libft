@@ -18,6 +18,7 @@ test: all
 test-libft : $(TEST_DIR)/test-libft
 
 $(TEST_DIR)/test-libft:
+	-rm -rf $@
 	mkdir $@/
 	cp $(ROOT)/Makefile $@/
 	cp $(ROOT)/targets.mk $@/

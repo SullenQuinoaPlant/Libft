@@ -19,14 +19,14 @@ so: $(ROOT)/$(SO_NAME)
 
 $(ROOT)/$(SO_NAME) : is_libso $(OBJS)
 	touch $(SO_STAMPS)
-	gcc $(GCCFLAGS) -o $(SO_NAME) $(OBJS)
+	gcc $(GCCFLAGS) -shared -o $(SO_NAME) $(OBJS)
 
 was_liba:
 	touch was_liba
 
 is_libso: was_liba
 	touch $(SRCS)
-	$(eval GCCFLAGS += -fPIC -shared)
+	$(eval GCCFLAGS += -fPIC)
 
 
 %.o: %.c
