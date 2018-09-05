@@ -66,7 +66,7 @@ OBJS := $(patsubst %,$(OBJ_DIR)/%.o,$(TARGETS))
 GCCFLAGS := -Wall -Wextra -Werror -I ./includes
 
 .PHONY : all
-all: $(NAME)
+all: $(NAME).a
 
 $(NAME).a: $(OBJS)
 	ar rcs $@ $^
