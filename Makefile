@@ -30,7 +30,7 @@ define RELEASE_FILES
 	cp $(SRC_DIR)/$(NAME).h $@/includes/
 	cp $(ROOT)/auteur $@/
 	cp $(ROOT)/targets.mk $@/Makefile
-	cat $(ROOT)project.mk >> $@/Makefile
+	cat $(ROOT)/project.mk >> $@/Makefile
 endef
 
 
