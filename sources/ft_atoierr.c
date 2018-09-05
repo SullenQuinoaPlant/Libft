@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/27 04:58:32 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/01 04:10:49 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/06 01:27:01 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	here_build_res(unsigned long *comp, unsigned long *res,\
 }
 
 int			ft_atoierr(const char *nptr,
-				int *p_res, char **ret_p)
+			int *ret_res, char **ret_p)
 {
 	unsigned long		res;
 	unsigned long		ref;
@@ -59,10 +59,10 @@ int			ft_atoierr(const char *nptr,
 	while (!fail && *nptr >= '0' && *nptr <= '9')
 		fail = here_build_res(&comp, &res, &ref, &nptr);
 	if (fail)
-		*p_res = (int)ref;
+		*ret_res = (int)ref;
 	else
-		*p_res = (int)(ref & 01 ? res : (~res) + 1);
+		*ret_res = (int)(ref & 01 ? res : (~res) + 1);
 	if (ret_p)
 		*ret_p = (char*)nptr;
-	return (-fail);
+	return (fail);
 }

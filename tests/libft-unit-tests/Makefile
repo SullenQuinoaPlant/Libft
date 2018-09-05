@@ -15,7 +15,7 @@
 #################
 
 #	Libft Makefile path
-LIBFTDIR	=	../libft
+LIBFTDIR	=	../test-libft
 
 #	Sources
 SRCDIR		=	./

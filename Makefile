@@ -1,51 +1,42 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/01/28 06:51:47 by nmauvari          #+#    #+#              #
-#    Updated: 2018/09/01 05:26:41 by nmauvari         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+ifndef ROOT
+	ROOT = .
+endif
 
-include Makefile.mk
+include  $(ROOT)/make_vars.mk
+include  $(ROOT)/core.mk
+include  $(SRC_DIR)/Makefile
+include  $(TEST_DIR)/Makefile
 
-TF = NO_TEST
 
-.PHONY: test libft
-test: all
-	gcc $(GCCFLAGS) -D "$(TF)=1" -o tf.exe test_main.c $(NAME)
-	./tf.exe
-
-libft:
-	mkdir $@/
-	cp ft_*.c $@/
-	cp auteur $@/
-	cp Makefile.mk $@/Makefile
-	cp libft.h $@/
-
-the_lib:
+.PHONY : release
+release :
 	-rm -rf $@/
 	git clone\
 		--single-branch --depth 1\
-		-b the_lib\
+		-b release\
 		https://github.com/SullenQuinoaPlant/Libft.git\
 		$@/
-	rm -rf $@/*
-	cp -r sources/ $@/sources
-	cp -r includes/ $@/includes
-	cp auteur $@/
-	cp Makefile.mk $@/Makefile
+	rm -r $@/*
+	$(RELEASE_FILES)
 	cd $@ &&\
 		git add * &&\
-		git commit -a -m the_lib &&\
+		git commit -a -m release &&\
 		git push
 
-unit_tests: libft
+define RELEASE_FILES
+	mkdir $@/sources
+	cp $(SRCS) $@/sources/
+	mkdir $@/includes
+	cp $(SRC_DIR)/*.h $@/includes/
+	cp auteur $@/
+	cp targets.mk $@/Makefile
+	cat project.mk >> $@/Makefile
+endef
+
+
+tests: libft
 	make -C ./libft-unit-tests/ f
 
 .PHONY : c
-c :
+gc :
 	git commit -a -m i
