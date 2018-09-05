@@ -9,8 +9,8 @@ include  $(TEST_DIR)/Makefile
 
 
 .PHONY : release
-release :
-	-rm -rf $@/
+$(ROOT)/release :
+	-rm -rf $@
 	git clone\
 		--single-branch --depth 1\
 		-b release\
@@ -27,15 +27,15 @@ define RELEASE_FILES
 	mkdir $@/sources
 	cp $(SRCS) $@/sources/
 	mkdir $@/includes
-	cp $(SRC_DIR)/*.h $@/includes/
-	cp auteur $@/
-	cp targets.mk $@/Makefile
-	cat project.mk >> $@/Makefile
+	cp $(SRC_DIR)/$(NAME).h $@/includes/
+	cp $(ROOT)/auteur $@/
+	cp $(ROOT)/targets.mk $@/Makefile
+	cat $(ROOT)project.mk >> $@/Makefile
 endef
 
 
 tests: libft
-	make -C ./libft-unit-tests/ f
+	make -C $(ROOT)/libft-unit-tests/ f
 
 .PHONY : c
 gc :
