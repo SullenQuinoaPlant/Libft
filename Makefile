@@ -1,64 +1,64 @@
 TARGETS :=\
-tft_atoi \
-tft_atoierr \
-tft_bzero \
-tft_cleanfree \
-tft_isalnum \
-tft_isalpha \
-tft_isascii \
-tft_isdigit \
-tft_isprint \
-tft_itoa \
-tft_lstadd \
-tft_lstdel \
-tft_lstdelone \
-tft_lstiter \
-tft_lstmap \
-tft_lstnew \
-tft_memalloc \
-tft_memccpy \
-tft_memchr \
-tft_memcmp \
-tft_memcpy \
-tft_memdel \
-tft_memmove \
-tft_memset \
-tft_putchar \
-tft_putchar_fd \
-tft_putendl \
-tft_putendl_fd \
-tft_putnbr \
-tft_putnbr_fd \
-tft_putstr \
-tft_putstr_fd \
-tft_strcat \
-tft_strchr \
-tft_strclr \
-tft_strcmp \
-tft_strcpy \
-tft_strdel \
-tft_strdup \
-tft_strequ \
-tft_striter \
-tft_striteri \
-tft_strjoin \
-tft_strlcat \
-tft_strlen \
-tft_strmap \
-tft_strmapi \
-tft_strncat \
-tft_strncmp \
-tft_strncpy \
-tft_strnequ \
-tft_strnew \
-tft_strnstr \
-tft_strrchr \
-tft_strsplit \
-tft_strstr \
-tft_strsub \
-tft_strtrim \
-tft_tolower \
-tft_toupper
+	ft_atoi \
+	ft_atoierr \
+	ft_bzero \
+	ft_cleanfree \
+	ft_isalnum \
+	ft_isalpha \
+	ft_isascii \
+	ft_isdigit \
+	ft_isprint \
+	ft_itoa \
+	ft_lstadd \
+	ft_lstdel \
+	ft_lstdelone \
+	ft_lstiter \
+	ft_lstmap \
+	ft_lstnew \
+	ft_memalloc \
+	ft_memccpy \
+	ft_memchr \
+	ft_memcmp \
+	ft_memcpy \
+	ft_memdel \
+	ft_memmove \
+	ft_memset \
+	ft_putchar \
+	ft_putchar_fd \
+	ft_putendl \
+	ft_putendl_fd \
+	ft_putnbr \
+	ft_putnbr_fd \
+	ft_putstr \
+	ft_putstr_fd \
+	ft_strcat \
+	ft_strchr \
+	ft_strclr \
+	ft_strcmp \
+	ft_strcpy \
+	ft_strdel \
+	ft_strdup \
+	ft_strequ \
+	ft_striter \
+	ft_striteri \
+	ft_strjoin \
+	ft_strlcat \
+	ft_strlen \
+	ft_strmap \
+	ft_strmapi \
+	ft_strncat \
+	ft_strncmp \
+	ft_strncpy \
+	ft_strnequ \
+	ft_strnew \
+	ft_strnstr \
+	ft_strrchr \
+	ft_strsplit \
+	ft_strstr \
+	ft_strsub \
+	ft_strtrim \
+	ft_tolower \
+	ft_toupper
 NAME = libft
 OBJ_DIR = ./sources
 OBJS := $(patsubst %,$(OBJ_DIR)/%.o,$(TARGETS))
