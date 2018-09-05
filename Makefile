@@ -1,42 +1,86 @@
-ifndef ROOT
-	ROOT = .
-endif
+TARGETS :=\
+tft_atoi \
+tft_atoierr \
+tft_bzero \
+tft_cleanfree \
+tft_isalnum \
+tft_isalpha \
+tft_isascii \
+tft_isdigit \
+tft_isprint \
+tft_itoa \
+tft_lstadd \
+tft_lstdel \
+tft_lstdelone \
+tft_lstiter \
+tft_lstmap \
+tft_lstnew \
+tft_memalloc \
+tft_memccpy \
+tft_memchr \
+tft_memcmp \
+tft_memcpy \
+tft_memdel \
+tft_memmove \
+tft_memset \
+tft_putchar \
+tft_putchar_fd \
+tft_putendl \
+tft_putendl_fd \
+tft_putnbr \
+tft_putnbr_fd \
+tft_putstr \
+tft_putstr_fd \
+tft_strcat \
+tft_strchr \
+tft_strclr \
+tft_strcmp \
+tft_strcpy \
+tft_strdel \
+tft_strdup \
+tft_strequ \
+tft_striter \
+tft_striteri \
+tft_strjoin \
+tft_strlcat \
+tft_strlen \
+tft_strmap \
+tft_strmapi \
+tft_strncat \
+tft_strncmp \
+tft_strncpy \
+tft_strnequ \
+tft_strnew \
+tft_strnstr \
+tft_strrchr \
+tft_strsplit \
+tft_strstr \
+tft_strsub \
+tft_strtrim \
+tft_tolower \
+tft_toupper
+NAME = libft
+OBJ_DIR = ./sources
+OBJS := $(patsubst %,$(OBJ_DIR)/%.o,$(TARGETS))
 
-include  $(ROOT)/make_vars.mk
-include  $(ROOT)/core.mk
-include  $(SRC_DIR)/Makefile
-include  $(TEST_DIR)/Makefile
+GCCFLAGS := -Wall -Wextra -Werror -I ./includes
 
+.PHONY : all
+all: $(NAME)
 
-.PHONY : release
-release :
-	-rm -rf $@/
-	git clone\
-		--single-branch --depth 1\
-		-b release\
-		https://github.com/SullenQuinoaPlant/Libft.git\
-		$@/
-	rm -r $@/*
-	$(RELEASE_FILES)
-	cd $@ &&\
-		git add * &&\
-		git commit -a -m release &&\
-		git push
+$(NAME).a: $(OBJS)
+	ar rcs $@ $^
 
-define RELEASE_FILES
-	mkdir $@/sources
-	cp $(SRCS) $@/sources/
-	mkdir $@/includes
-	cp $(SRC_DIR)/*.h $@/includes/
-	cp auteur $@/
-	cp targets.mk $@/Makefile
-	cat project.mk >> $@/Makefile
-endef
+%.o: %.c
+	@gcc -c $(GCCFLAGS) $< -o $@
 
+.PHONY : clean
+clean:
+	-rm $(OBJS)
 
-tests: libft
-	make -C ./libft-unit-tests/ f
+.PHONY : fclean
+fclean: clean
+	-rm $(NAME).a
 
-.PHONY : c
-gc :
-	git commit -a -m i
+.PHONY : re
+re: fclean all

@@ -1,8 +1,0 @@
-#to get output with one character before valid string:
-for x in {$'\0'..$'\177'}; do a $(echo "$x"11) >> res1_char; done
-
-#to get output with two characters befor valid stirng:
-for x in {$'\0'..$'\177'}; do a $(echo "$x$x"11) >> res2_char; done
-
-#to filter the output : (after numbering lines with nl)
-grep -E ".*[^0]+$" res1_char_nl
