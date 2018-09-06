@@ -6,7 +6,7 @@ endif
 TF = NO_TEST
 .PHONY: test
 test: all
-	gcc $(GCCFLAGS)\
+	gcc $(CFLAGS)\
 		-I $(SRC_DIR)\
 		-D "$(TF)=1"\
  		$(TEST_DIR)/test_main.c\
