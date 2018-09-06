@@ -26,7 +26,9 @@ $(TEST_DIR)/test-libft:
 	cp $(ROOT)/targets.mk $@/
 	cp $(ROOT)/make_vars.mk $@/Makefile
 	cat $(ROOT)/core.mk >> $@/Makefile
-	cp -r  $(SRC_DIR) $@/
+	cp -r $(SRC_DIR) $@/
+	mkdir $@/includes
+	cp $(SRC_DIR)/$(NAME).h $@/includes/
 
 .PHONY : unit_tests
 unit_tests: test-libft
