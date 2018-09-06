@@ -13,9 +13,10 @@ OBJS = $(patsubst %.c,%.o,$(SRCS))
 
 TEST_DIR := $(ROOT)/tests
 SRC_DIR := $(ROOT)/sources
+INC_DIR := $(ROOT)/includes
 OBJ_DIR := $(ROOT)/objects
 
-GCCFLAGS := -Wall -Wextra -Werror
+GCCFLAGS := -Wall -Wextra -Werror -I $(INC_DIR)
 
 A_STAMPS = was_liba is_liba
 SO_STAMPS = was_libso is_libso

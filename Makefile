@@ -26,8 +26,10 @@ $(ROOT)/release :
 define RELEASE_FILES
 	mkdir $@/sources
 	cp $(SRCS) $@/sources/
+	cp $(INC_DIR)/*.h $@/sources
 	mkdir $@/includes
-	cp $(SRC_DIR)/$(NAME).h $@/includes/
+	mv $@/sources/$(NAME).h $@/includes
+	cp -r $(INC_DIR)/ $@/
 	cp $(ROOT)/auteur $@/
 	cp $(ROOT)/targets.mk $@/Makefile
 	cat $(ROOT)/project.mk >> $@/Makefile
