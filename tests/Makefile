@@ -14,11 +14,11 @@ test: all
 		-o $(TEST_DIR)/tf.exe
 	./$(TEST_DIR)/tf.exe
 
-.PHONY : test-libft
-test-libft : $(TEST_DIR)/test-libft
+.PHONY : test_libft
+test_libft : $(TEST_DIR)/test_libft
 
-.PHONY : $(TEST_DIR)/test-libft
-$(TEST_DIR)/test-libft:
+.PHONY : $(TEST_DIR)/test_libft
+$(TEST_DIR)/test_libft:
 	-rm -rf $@
 	mkdir $@/
 	cp $(ROOT)/auteur $@/
@@ -31,5 +31,5 @@ $(TEST_DIR)/test-libft:
 	cp $(SRC_DIR)/$(NAME).h $@/includes/
 
 .PHONY : unit_tests
-unit_tests: test-libft
+unit_tests: test_libft
 	make -C $(TEST_DIR)/libft-unit-tests/ f
