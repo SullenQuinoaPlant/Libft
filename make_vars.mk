@@ -16,7 +16,8 @@ SRC_DIR := $(ROOT)/sources
 INC_DIR := $(ROOT)/includes
 OBJ_DIR := $(ROOT)/objects
 
-GCCFLAGS := -Wall -Wextra -Werror -I $(INC_DIR)
+CFLAGS = -Wall -Wextra -Werror -I $(INC_DIR)
+SET_CFLAGS := $(CFLAGS)
 
 A_STAMPS = was_liba is_liba
 SO_STAMPS = was_libso is_libso

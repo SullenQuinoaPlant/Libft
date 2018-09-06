@@ -32,7 +32,7 @@ define RELEASE_FILES
 	cp -r $(INC_DIR)/ $@/
 	cp $(ROOT)/auteur $@/
 	cp $(ROOT)/targets.mk $@/Makefile
-	cat $(ROOT)/project.mk >> $@/Makefile
+	cat $(ROOT)/release.mk >> $@/Makefile
 endef
 
 

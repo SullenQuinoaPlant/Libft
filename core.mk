@@ -13,7 +13,7 @@ was_libso:
 
 is_liba: was_libso
 	touch $(SRCS)
-	$(eval GCCFLAGS := -Wall -Wextra -Werror)
+	$(eval SET_CFLAGS := $(CFLAGS)) 
 
 
 .PHONY : so
@@ -21,18 +21,18 @@ so: $(ROOT)/$(SO_NAME)
 
 $(ROOT)/$(SO_NAME) : is_libso $(OBJS)
 	touch $(SO_STAMPS)
-	gcc $(GCCFLAGS) -shared -o $(SO_NAME) $(OBJS)
+	gcc $(SET_CFLAGS) -shared -o $(SO_NAME) $(OBJS)
 
 was_liba:
 	touch was_liba
 
 is_libso: was_liba
 	touch $(SRCS)
-	$(eval GCCFLAGS += -fPIC)
+	$(eval SET_CFLAGS += -fPIC)
 
 
 %.o: %.c
-	@gcc -c $(GCCFLAGS) $< -o $@
+	gcc -c $(SET_CFLAGS) $< -o $@
 
 
 .PHONY : clean

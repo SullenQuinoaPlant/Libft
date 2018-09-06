@@ -2,7 +2,7 @@ NAME = libft
 OBJ_DIR = ./sources
 OBJS := $(patsubst %,$(OBJ_DIR)/%.o,$(TARGETS))
 
-GCCFLAGS := -Wall -Wextra -Werror -I ./includes
+CFLAGS := -Wall -Wextra -Werror -I ./includes
 
 .PHONY : all
 all: $(NAME).a
@@ -14,7 +14,7 @@ $(NAME).a: $(OBJS)
 	ar rcs $@ $^
 
 %.o: %.c
-	@gcc -c $(GCCFLAGS) $< -o $@
+	@gcc -c $(CFLAGS) $< -o $@
 
 .PHONY : clean
 clean:
