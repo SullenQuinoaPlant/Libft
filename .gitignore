@@ -1,5 +1,6 @@
 libft.a
 *.o
+*.so
 *.swp
 *.swo
 a.out
