@@ -7,6 +7,9 @@ GCCFLAGS := -Wall -Wextra -Werror -I ./includes
 .PHONY : all
 all: $(NAME).a
 
+.PHONY : $(NAME)
+$(NAME) : $(NAME).a
+
 $(NAME).a: $(OBJS)
 	ar rcs $@ $^
 
