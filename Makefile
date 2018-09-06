@@ -29,7 +29,6 @@ define RELEASE_FILES
 	cp $(INC_DIR)/*.h $@/sources
 	mkdir $@/includes
 	mv $@/sources/$(NAME).h $@/includes
-	cp -r $(INC_DIR)/ $@/
 	cp $(ROOT)/auteur $@/
 	cp $(ROOT)/targets.mk $@/Makefile
 	cat $(ROOT)/release.mk >> $@/Makefile
