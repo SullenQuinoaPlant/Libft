@@ -2,7 +2,7 @@
 all: $(NAME)
 
 .PHONY : $(NAME)
-$(NAME) : $(A_NAME)
+$(NAME) : $(ROOT)/$(A_NAME)
 
 $(ROOT)/$(A_NAME): is_liba $(OBJS)
 	touch $(A_STAMPS)
