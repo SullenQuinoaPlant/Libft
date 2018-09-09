@@ -57,6 +57,7 @@ TARGETS :=\
 	ft_strstr \
 	ft_strsub \
 	ft_strtrim \
+	ft_supercleanfree \
 	ft_tolower \
 	ft_toupper
 NAME = libft
