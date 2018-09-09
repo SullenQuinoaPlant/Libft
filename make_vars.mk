@@ -1,5 +1,5 @@
 ifndef ROOT
-	ROOT = .
+ ROOT = .
 endif
 
 include $(ROOT)/targets.mk

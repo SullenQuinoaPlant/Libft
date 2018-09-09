@@ -1,10 +1,14 @@
 ifndef ROOT
-	ROOT = ..
-	include $(ROOT)/Makefile
+ ROOT = ..
+ include $(ROOT)/Makefile
 endif
 
 .PHONY : targets
-targets : $(ROOT)/targets.mk
+targets : clean-targets $(ROOT)/targets.mk
+
+.PHONY : clean-targets
+clean-targets :
+	rm $(ROOT)/targets.mk
 
 .PHONY : $(ROOT)/targets.mk 
 $(ROOT)/targets.mk :
