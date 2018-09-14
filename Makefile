@@ -10,6 +10,7 @@ TARGETS :=\
 	ft_isprint \
 	ft_itoa \
 	ft_lstadd \
+	ft_lstappend \
 	ft_lstdel \
 	ft_lstdelone \
 	ft_lstiter \
