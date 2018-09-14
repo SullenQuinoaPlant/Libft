@@ -37,7 +37,3 @@ endef
 
 tests: libft
 	make -C $(ROOT)/libft-unit-tests/ f
-
-.PHONY : c
-gc :
-	git commit -a -m i

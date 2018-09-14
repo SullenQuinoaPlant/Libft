@@ -6,12 +6,11 @@ endif
 .PHONY : targets
 targets : $(ROOT)/targets.mk
 
-.PHONY : clean-targets
-clean-targets :
-	rm $(ROOT)/targets.mk
+.PHONY : targets
+targets : $(ROOT)/targets.mk
 
 .PHONY : $(ROOT)/targets.mk 
-$(ROOT)/targets.mk : clean-targets
+$(ROOT)/targets.mk :
 	@echo "TARGETS :=\\" > $@
 	@ls $(SRC_DIR)/*.c \
 	|sed 's@.*/\([a-z0-9][a-z0-9_]*\)\.c@	\1 \\@' \
