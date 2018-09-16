@@ -14,11 +14,9 @@
 
 void	ft_lsttailadd(t_list **tail, t_list *new)
 {
-	t_list	*last;
-
 	if (new)
 	{
 		(**tail).next = new;
-		*tail = ft_lestlast(new);
+		*tail = ft_lstlast(new);
 	}
 }
