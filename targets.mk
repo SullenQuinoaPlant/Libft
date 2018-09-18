@@ -25,6 +25,8 @@ TARGETS :=\
 	ft_memdel \
 	ft_memmove \
 	ft_memset \
+	ft_memswapalone \
+	ft_memswap \
 	ft_putchar \
 	ft_putchar_fd \
 	ft_putendl \
@@ -61,7 +63,5 @@ TARGETS :=\
 	ft_strsub \
 	ft_strtrim \
 	ft_supercleanfree \
-	ft_swapalone \
-	ft_swap \
 	ft_tolower \
 	ft_toupper
