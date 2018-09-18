@@ -10,12 +10,13 @@ TARGETS :=\
 	ft_isprint \
 	ft_itoa \
 	ft_lstadd \
-	ft_lstappend \
 	ft_lstdel \
 	ft_lstdelone \
 	ft_lstiter \
+	ft_lstlast \
 	ft_lstmap \
 	ft_lstnew \
+	ft_lsttailadd \
 	ft_memalloc \
 	ft_memccpy \
 	ft_memchr \
@@ -24,6 +25,8 @@ TARGETS :=\
 	ft_memdel \
 	ft_memmove \
 	ft_memset \
+	ft_memswapalone \
+	ft_memswap \
 	ft_putchar \
 	ft_putchar_fd \
 	ft_putendl \
@@ -32,6 +35,7 @@ TARGETS :=\
 	ft_putnbr_fd \
 	ft_putstr \
 	ft_putstr_fd \
+	ft_scleanfree \
 	ft_strcat \
 	ft_strchr \
 	ft_strclr \

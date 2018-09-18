@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   h.h                                                :+:      :+:    :+:   */
+/*   ft_memswapalone.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/01 09:54:46 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/01 05:40:06 by nmauvari         ###   ########.fr       */
+/*   Created: 2018/09/08 12:17:39 by nmauvari          #+#    #+#             */
+/*   Updated: 2018/09/09 08:25:56 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef H_H
-# define H_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
-# include <ctype.h>
+int					ft_memswapalone(
+	void *a,
+	void *b,
+	size_t sz)
+{
+	void	*buff;
 
-# include "libft.h"
-
-#endif
+	if (!(buff = malloc(sz)))
+		return (-1);
+	ft_memcpy(buff, a, sz);
+	ft_memcpy(a, b, sz);
+	ft_memcpy(b, buff, sz);
+	free(buff);
+	return (0);
+}
