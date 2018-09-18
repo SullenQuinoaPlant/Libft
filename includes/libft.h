@@ -50,6 +50,8 @@ void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			ft_memdel(void **ap);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memset(void *s, int c, size_t n);
+void			ft_memswap(void *a, void *b, void *buff, size_t sz);
+int				ft_memswapalone(void *a, void *b, size_t sz);
 void			ft_putchar(char c);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putendl(char const *s);
@@ -85,8 +87,6 @@ char			**ft_strsplit(char const *s, char c);
 char			*ft_strstr(const char *haystack, const char *needle);
 char			*ft_strtrim(char const *s);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
-void			ft_swap(void *a, void *b, void *buff, size_t sz);
-int				ft_swapalone(void *a, void *b, size_t sz);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 
