@@ -61,5 +61,7 @@ TARGETS :=\
 	ft_strsub \
 	ft_strtrim \
 	ft_supercleanfree \
+	ft_swapalone \
+	ft_swap \
 	ft_tolower \
 	ft_toupper

@@ -85,6 +85,8 @@ char			**ft_strsplit(char const *s, char c);
 char			*ft_strstr(const char *haystack, const char *needle);
 char			*ft_strtrim(char const *s);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
+void			ft_swap(void *a, void *b, void *buff, size_t sz);
+int				ft_swapalone(void *a, void *b, size_t sz);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 
