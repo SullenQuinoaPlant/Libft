@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_supercleanfree.c                                :+:      :+:    :+:   */
+/*   ft_lstappend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/09 11:07:26 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/09 11:07:45 by nmauvari         ###   ########.fr       */
+/*   Created: 2018/09/14 13:52:10 by nmauvari          #+#    #+#             */
+/*   Updated: 2018/09/14 13:52:55 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_supercleanfree(void **p, size_t sz)
+void	ft_lstappend(t_list **last, t_list *new)
 {
-	ft_bzero(*p, sz);
-	free(*p);
-	*p = 0;
+	t_list	*nxt;
+
+	nxt = *last;
+	while ((nxt = nxt->next))
+		*last = nxt;
+	(**last).next = new;
+	while ((nxt = new->next))
+		new = nxt;
+	*last = new;
 }
