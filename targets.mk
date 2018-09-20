@@ -26,8 +26,8 @@ TARGETS :=\
 	ft_memdel \
 	ft_memmove \
 	ft_memset \
-	ft_memswapalone \
 	ft_memswap \
+	ft_memswapalone \
 	ft_putchar \
 	ft_putchar_fd \
 	ft_putendl \
