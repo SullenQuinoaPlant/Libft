@@ -20,7 +20,7 @@ void	ft_lstdelhead(t_list **alst, void (*del)(void*, size_t))
 	{
 		if (del)
 			(*del)((*alst)->content, (*alst)->content_size);
-		nxt = *alst->next;
+		nxt = (*alst)->next;
 		ft_cleanfree(*alst, sizeof(t_list));
 		*alst = nxt;
 	}
