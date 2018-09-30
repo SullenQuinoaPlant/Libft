@@ -12,6 +12,7 @@ TARGETS :=\
 	ft_lstadd \
 	ft_lstappend \
 	ft_lstdel \
+	ft_lstdelhead \
 	ft_lstdelone \
 	ft_lstiter \
 	ft_lstlast \
@@ -48,6 +49,7 @@ TARGETS :=\
 	ft_striter \
 	ft_striteri \
 	ft_strjoin \
+	ft_strjoinfree \
 	ft_strlcat \
 	ft_strlen \
 	ft_strmap \
