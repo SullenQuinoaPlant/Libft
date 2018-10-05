@@ -33,7 +33,3 @@ define RELEASE_FILES
 	cp $(ROOT)/targets.mk $@/Makefile
 	cat $(ROOT)/release.mk >> $@/Makefile
 endef
-
-
-tests: libft
-	make -C $(ROOT)/libft-unit-tests/ f

@@ -45,6 +45,53 @@ int		main(int ac, char **av)
 		printf("atoi is : %d\n", atoi(str));
 		printf("\nft_atoi is :%d", ft_atoi(str));
 	}
+#elif ATOIERR
+	int		ret;
+	if (ac == 2)
+	{
+		printf("atoi is : %d\n", atoi(av[1]));
+		ft_atoierr(av[1], &ret, 0);
+		printf("\nft_atoierr is :%d", ret);
+	}
+	else
+	{
+		//char	*str = "\t\v\r\f\n \t-  456";
+		char	*str = "";
+		char	n[40];
+
+		sprintf(n, "%li", LONG_MAX);
+		printf("value stored at n is :%s\n", n);
+
+		int		ret_ft = ft_atoierr(n, &ret, 0);
+		int		ret = atoi(n);
+		printf("\nft_atoierr of n gives: %d, atoi gives : %d\n", ret_ft, ret);
+		
+		printf("long max value is : %li", LONG_MAX);
+		printf("atoi is : %d\n", atoi(str));
+		ret_ft = ft_atoierr(str, &ret, 0);
+		printf("\nft_atoierr is :%d", ret);
+	}
+#elif AXTOIERR
+	int		ret;
+	if (ac == 2)
+	{
+		ft_axtoierr(av[1], &ret, 0);
+		printf("\nft_axtoierr is :%d", ret);
+	}
+	else
+	{
+		//char	*str = "\t\v\r\f\n \t-  456";
+		char	*str = "";
+		char	n[40];
+		int		ret_nb;
+
+		sprintf(n, "%lx", LONG_MAX);
+		printf("value stored at n is :%s\n", n);
+
+		ret = ft_axtoierr(n, &ret_nb, &str);
+		printf("long max value is : %lx\n", LONG_MAX);
+		printf("\nft_axtoierr of n gives: %d n", ret_nb);
+	}
 #elif ISALPHA
 	int		i;
 

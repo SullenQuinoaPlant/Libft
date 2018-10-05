@@ -5,12 +5,12 @@ endif
 
 TF = NO_TEST
 .PHONY: test
-test: all
+test:
 	gcc $(CFLAGS)\
 		-I $(SRC_DIR)\
 		-D "$(TF)=1"\
  		$(TEST_DIR)/test_main.c\
-		$(A_NAME)\
+		$(ROOT)/$(A_NAME)\
 		-o $(TEST_DIR)/tf.exe
 	./$(TEST_DIR)/tf.exe
 

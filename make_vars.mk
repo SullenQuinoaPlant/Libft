@@ -17,7 +17,8 @@ INC_DIR := $(ROOT)/includes
 OBJ_DIR := $(ROOT)/objects
 
 CFLAGS = -Wall -Wextra -Werror -I $(INC_DIR)
+CFLAGS += $(CFLAGS_MORE)
 SET_CFLAGS := $(CFLAGS)
 
-A_STAMPS = was_liba is_liba
-SO_STAMPS = was_libso is_libso
+A_STAMPS = $(ROOT)/was_liba $(ROOT)/is_liba
+SO_STAMPS = $(ROOT)/was_libso $(ROOT)/is_libso

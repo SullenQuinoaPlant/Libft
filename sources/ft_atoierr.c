@@ -10,8 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static void	here_init(const char **nptr, unsigned long *ref,\
-					unsigned long *res, int *fail)
+static void						here_init(
+	const char **nptr,
+	unsigned long *ref,
+	unsigned long *res,
+	int *fail)
 {
 	while (!((**nptr ^ ' ') && ((**nptr < '\t') || (**nptr > '\r'))))
 		(*nptr)++;
@@ -22,42 +25,52 @@ static void	here_init(const char **nptr, unsigned long *ref,\
 	*fail = 0;
 }
 
-static int	here_build_res(unsigned long *comp, unsigned long *res,\
-					unsigned long *ref, const char **nptr)
+static int						here_build_res(
+	unsigned long *p_res,
+	unsigned long ref,
+	const char c)
 {
+	unsigned long	res;
+	unsigned long	comp;
 	unsigned long	save;
 	int				fail;
 
-	*comp = *res << 1;
-	fail = *comp > *ref || *comp < *res ? 1 : 0;
-	*res = *comp;
-	save = *res;
-	*comp = *res << 1;
-	fail = *comp > *ref || *comp < *res ? 1 : fail;
-	*res = *comp;
-	*comp = *comp << 1;
-	fail = *comp > *ref || *comp < *res ? 1 : fail;
-	*res = *comp;
-	*comp = *comp + save;
-	fail = *comp > *ref ? 1 : fail;
-	*res = *comp;
-	*comp = *comp + (*(*nptr)++ - '0');
-	fail = *comp > *ref ? 1 : fail;
-	*res = *comp;
+	res = *p_res;
+	comp = res << 1;
+	fail = comp > ref || comp < res ? 1 : 0;
+	res = comp;
+	save = res;
+	comp = res << 1;
+	fail = comp > ref || comp < res ? 1 : fail;
+	res = comp;
+	comp <<= 1;
+	fail = comp > ref || comp < res ? 1 : fail;
+	res = comp;
+	comp += save;
+	fail = comp > ref ? 1 : fail;
+	res = comp;
+	comp += c - '0';
+	fail = comp > ref ? 1 : fail;
+	*p_res = comp;
 	return (fail);
 }
 
-int			ft_atoierr(const char *nptr,
-			int *ret_res, char **ret_p)
+int								ft_atoierr(
+	const char *nptr,
+	int *ret_res,
+	char **ret_p)
 {
 	unsigned long		res;
 	unsigned long		ref;
-	unsigned long		comp;
+	char				c;
 	int					fail;
 
 	here_init(&nptr, &ref, &res, &fail);
-	while (!fail && *nptr >= '0' && *nptr <= '9')
-		fail = here_build_res(&comp, &res, &ref, &nptr);
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		c = *nptr++;
+		fail = here_build_res(&res, ref, c);
+	}
 	if (fail)
 		*ret_res = (int)ref;
 	else

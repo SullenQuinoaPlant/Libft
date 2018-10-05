@@ -4,14 +4,14 @@ all: $(NAME)
 .PHONY : $(NAME)
 $(NAME) : $(ROOT)/$(A_NAME)
 
-$(ROOT)/$(A_NAME): is_liba $(OBJS)
+$(ROOT)/$(A_NAME): $(ROOT)/is_liba $(OBJS)
 	touch $(A_STAMPS)
-	ar rcs $(A_NAME) $(OBJS)
+	ar rcs $@ $(OBJS)
 
-was_libso:
-	touch was_libso
+$(ROOT)/was_libso:
+	touch $@
 
-is_liba: was_libso
+$(ROOT)/is_liba: $(ROOT)/was_libso
 	touch $(SRCS)
 	$(eval SET_CFLAGS := $(CFLAGS)) 
 
@@ -19,14 +19,14 @@ is_liba: was_libso
 .PHONY : so
 so: $(ROOT)/$(SO_NAME)
 
-$(ROOT)/$(SO_NAME) : is_libso $(OBJS)
+$(ROOT)/$(SO_NAME) : $(ROOT)/is_libso $(OBJS)
 	touch $(SO_STAMPS)
 	gcc $(SET_CFLAGS) -shared -o $(SO_NAME) $(OBJS)
 
-was_liba:
-	touch was_liba
+$(ROOT)/was_liba:
+	touch $@
 
-is_libso: was_liba
+$(ROOT)/is_libso: $(ROOT)/was_liba
 	touch $(SRCS)
 	$(eval SET_CFLAGS += -fPIC)
 
