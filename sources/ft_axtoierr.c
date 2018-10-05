@@ -52,7 +52,7 @@ static int							here_build_res(
 	return (fail);
 }
 
-int									is_digit(
+static int							is_digit(
 	char c,
 	unsigned long *digit)
 {
