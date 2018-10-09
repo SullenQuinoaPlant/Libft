@@ -1,6 +1,7 @@
 TARGETS :=\
 	ft_atoi \
 	ft_atoierr \
+	ft_axtoierr \
 	ft_bzero \
 	ft_cleanfree \
 	ft_isalnum \
@@ -27,8 +28,8 @@ TARGETS :=\
 	ft_memdel \
 	ft_memmove \
 	ft_memset \
-	ft_memswap \
 	ft_memswapalone \
+	ft_memswap \
 	ft_putchar \
 	ft_putchar_fd \
 	ft_putendl \

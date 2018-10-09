@@ -24,8 +24,15 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+typedef struct	s_memory_pointer
+{
+	void		*p;
+	size_t		sz;
+}				t_memp;
+
 int				ft_atoi(const char *nptr);
 int				ft_atoierr(const char *p, int *r, char **r_p);
+int				ft_axtoierr(const char *p, int *r, char **r_p);
 void			ft_bzero(void *s, size_t n);
 void			ft_cleanfree(void *p, size_t sz);
 int				ft_isalnum(int c);

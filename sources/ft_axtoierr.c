@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoierr.c                                       :+:      :+:    :+:   */
+/*   ft_axtoierr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static void						here_init(
+static void							here_init(
 	const char **nptr,
 	unsigned long *ref,
 	unsigned long *res,
@@ -25,52 +25,62 @@ static void						here_init(
 	*fail = 0;
 }
 
-static int						here_build_res(
+static int							here_build_res(
 	unsigned long *p_res,
 	unsigned long ref,
-	const char c)
+	unsigned long digit)
 {
 	unsigned long	res;
 	unsigned long	comp;
-	unsigned long	save;
 	int				fail;
+	int				i;
 
 	res = *p_res;
-	comp = res << 1;
-	fail = comp > ref || comp < res ? 1 : 0;
-	res = comp;
-	save = res;
-	comp = res << 1;
-	fail = comp > ref || comp < res ? 1 : fail;
-	res = comp;
-	comp <<= 1;
-	fail = comp > ref || comp < res ? 1 : fail;
-	res = comp;
-	comp += save;
-	fail = comp > ref ? 1 : fail;
-	res = comp;
-	comp += c - '0';
-	fail = comp > ref ? 1 : fail;
-	*p_res = comp;
+	fail = 0;
+	i = 4;
+	while (i--)
+		if ((comp = res << 1) > ref || comp < res)
+		{
+			fail = 1;
+			break;
+		}
+		else
+			res = comp;
+	if (!fail)
+		res |= digit;
+	*p_res = res;
 	return (fail);
 }
 
-int								ft_atoierr(
+static int							is_digit(
+	char c,
+	unsigned long *digit)
+{
+	if (c > '/' && c < ':')
+		*digit = c - '0';
+	else if (c > '@' && c < 'G')
+		*digit = c - 'A' + 10;
+	else if (c > '`' && c < 'g')
+		*digit = c - 'a' + 10;
+	else
+		return (0);
+	return (1);
+}
+
+int									ft_axtoierr(
 	const char *nptr,
 	int *ret_res,
 	char **ret_p)
 {
 	unsigned long		res;
 	unsigned long		ref;
-	char				c;
+	unsigned long		digit;
 	int					fail;
 
 	here_init(&nptr, &ref, &res, &fail);
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		c = *nptr++;
-		fail = here_build_res(&res, ref, c);
-	}
+	while (is_digit(*nptr, &digit) &&
+		!(fail = here_build_res(&res, ref, digit)))
+		nptr++;
 	if (fail)
 		*ret_res = (int)ref;
 	else
