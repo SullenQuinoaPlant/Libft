@@ -32,6 +32,7 @@ typedef struct	s_memory_pointer
 
 int				ft_atoi(const char *nptr);
 int				ft_atoierr(const char *p, int *r, char **r_p);
+int				ft_axtoierr(const char *p, int *r, char **r_p);
 void			ft_bzero(void *s, size_t n);
 void			ft_cleanfree(void *p, size_t sz);
 int				ft_isalnum(int c);
@@ -43,6 +44,7 @@ char			*ft_itoa(int n);
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstappend(t_list **last, t_list *new);
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstdelhead(t_list **alst, void (*del)(void*, size_t));
 void			ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstlast(t_list *lst);

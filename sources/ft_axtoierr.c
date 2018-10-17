@@ -31,13 +31,13 @@ static int							here_build_res(
 	unsigned long digit)
 {
 	unsigned long	res;
-	unsigned long	comp,
+	unsigned long	comp;
 	int				fail;
 	int				i;
 
 	res = *p_res;
 	fail = 0;
-	i = 16;
+	i = 4;
 	while (i--)
 		if ((comp = res << 1) > ref || comp < res)
 		{
@@ -52,18 +52,16 @@ static int							here_build_res(
 	return (fail);
 }
 
-int									is_digit(
-	char *pc,
+static int							is_digit(
+	char c,
 	unsigned long *digit)
 {
-	char const	c = *pc;
-
 	if (c > '/' && c < ':')
 		*digit = c - '0';
-	if (c > '@' && c < 'G')
-		*digit = c - 'A';
-	if (c > '`' && c < 'g')
-		*digit = c - 'a';
+	else if (c > '@' && c < 'G')
+		*digit = c - 'A' + 10;
+	else if (c > '`' && c < 'g')
+		*digit = c - 'a' + 10;
 	else
 		return (0);
 	return (1);
