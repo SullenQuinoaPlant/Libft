@@ -6,13 +6,13 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/18 10:32:33 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/10/18 10:35:08 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/10/18 10:40:59 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstaddnew(t_list **alst, void const *content, size_t content_sz)
+int		ft_lstaddnew(t_list **alst, void const *content, size_t content_sz)
 {
 	t_list	*new;
 
