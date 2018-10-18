@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 06:27:03 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/14 13:54:05 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/10/18 10:37:38 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int				ft_isdigit(int c);
 int				ft_isprint(int c);
 char			*ft_itoa(int n);
 void			ft_lstadd(t_list **alst, t_list *new);
+int				ft_lstaddnew(t_list **alst, void const *content, size_t ct_sz);
 void			ft_lstappend(t_list **last, t_list *new);
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdelhead(t_list **alst, void (*del)(void*, size_t));
@@ -73,6 +74,7 @@ char			*ft_strcat(char *dest, const char *src);
 char			*ft_strchr(const char *s, int c);
 void			ft_strclr(char *s);
 int				ft_strcmp(const char *s1, const char *s2);
+int				ft_strcmplen(const char *s1, const char *s2, size_t len);
 char			*ft_strcpy(char *dest, const char *src);
 void			ft_strdel(char **as);
 char			*ft_strdup(const char *s);
