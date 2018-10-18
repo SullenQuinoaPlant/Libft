@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memswapalone.c                                  :+:      :+:    :+:   */
+/*   ft_strcmplen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/08 12:17:39 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/09 08:25:56 by nmauvari         ###   ########.fr       */
+/*   Created: 2017/12/06 06:52:19 by nmauvari          #+#    #+#             */
+/*   Updated: 2018/10/18 10:19:03 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-int					ft_memswapalone(
-	void *a,
-	void *b,
-	size_t sz)
+int		ft_strcmplen(const char *s1, const char *s2, size_t len)
 {
-	void	*buff;
+	const char *const	lim = s1 + len;
+	size_t	index;
+	int		diff;
 
-	if (!(buff = malloc(sz)))
-		return (-1);
-	ft_memcpy(buff, a, sz);
-	ft_memcpy(a, b, sz);
-	ft_memcpy(b, buff, sz);
-	free(buff);
-	return (0);
+	index = 0;
+	while (s1 < lim && !(diff = *s1++ - *s2++))
+		if (!*s1)
+			break;
+	return (diff);
 }
