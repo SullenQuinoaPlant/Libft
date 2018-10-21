@@ -17,14 +17,14 @@ void			ft_memswap(
 	void *b,
 	size_t sz)
 {
-	void *const		lim = a + sz;
-	unsigned char	c;
-	unsigned char	*pa;
-	unsigned char	*pb;
+	unsigned char *const	lim = a + sz;
+	unsigned char			c;
+	unsigned char			*pa;
+	unsigned char			*pb;
 
 	pa = a;
 	pb = b;
-	while (a < lim)
+	while (pa < lim)
 	{
 		c = *pa;
 		*pa++ = *pb;
