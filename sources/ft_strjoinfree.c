@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/30 20:26:39 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/30 20:29:01 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/10/27 00:46:18 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ char	*ft_strjoinfree(char *s1, char *s2)
 		ft_cleanfree(s1, l1);
 		ft_cleanfree(s2, l2);
 	}
-
 	return (s);
 }
