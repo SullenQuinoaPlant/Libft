@@ -4,7 +4,6 @@ TARGETS :=\
 	ft_axtoierr \
 	ft_bzero \
 	ft_cleanfree \
-	ft_free \
 	ft_isalnum \
 	ft_isalpha \
 	ft_isascii \

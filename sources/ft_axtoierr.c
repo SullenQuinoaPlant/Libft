@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/27 04:58:32 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/06 01:27:01 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/10/27 00:40:41 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int							here_build_res(
 		if ((comp = res << 1) > ref || comp < res)
 		{
 			fail = 1;
-			break;
+			break ;
 		}
 		else
 			res = comp;
