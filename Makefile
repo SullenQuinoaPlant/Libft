@@ -68,7 +68,8 @@ TARGETS :=\
 	ft_strsub \
 	ft_strtrim \
 	ft_tolower \
-	ft_toupper
+	ft_toupper \
+	ft_wstrlen
 NAME = libft
 OBJ_DIR = ./sources
 OBJS := $(patsubst %,$(OBJ_DIR)/%.o,$(TARGETS))
