@@ -68,4 +68,5 @@ TARGETS :=\
 	ft_strsub \
 	ft_strtrim \
 	ft_tolower \
-	ft_toupper
+	ft_toupper \
+	ft_wstrlen
