@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 06:27:03 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/10/18 10:37:38 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/10/27 22:16:32 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <wchar.h>
 
 typedef struct	s_list
 {
@@ -100,5 +101,6 @@ char			*ft_strtrim(char const *s);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+size_t			ft_wstrlen(wchar_t *str);
 
 #endif
